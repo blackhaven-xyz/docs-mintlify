@@ -1,0 +1,86 @@
+---
+title: "RBT Notes"
+description: "Fixed-term lockup instruments issued as ERC-721 NFTs that let holders earn guaranteed yield by committing their RBT for a set period."
+---
+
+RBT Notes are fixed-term lockup instruments issued as ERC-721 NFTs that let holders earn guaranteed yield by committing their RBT for a set period. Unlike liquid staking where rewards vary and capital can leave at any time, Notes offer a simple proposition: lock now, know your exact return, collect at maturity.
+
+## How Notes Work
+
+1. Choose your term
+2. Deposit RBT into the contract
+3. Receive an NFT representing your position
+4. Your yield is calculated and locked in from day one
+5. At maturity, burn the NFT and claim principal plus yield
+
+## Early Exit
+
+You can redeem before maturity, but it comes with two costs:
+
+1. **Forfeited yield:** You receive zero yield regardless of how long you held
+2. **Principal penalty:** Up to 10% of your deposit, scaling linearly with time remaining
+
+The penalty decreases proportionally with time held. Exit at the start of your term and pay the full 10%. Exit halfway through and pay 5%. Exit near maturity and pay close to nothing.
+
+<Tip>
+Penalties flow back into the contract, funding future yields for holders who complete their terms.
+</Tip>
+
+---
+
+## RBT Notes Yield Curve
+
+Yield scales quadratically with term length, rewarding longer commitments disproportionately more than linear scaling.
+
+$$
+\text{APY}(t) = r_{\min} + (r_{\max} - r_{\min}) \times \left(\frac{t - t_{\min}}{t_{\max} - t_{\min}}\right)^2
+$$
+
+Where:
+
+- *t* = term length in weeks
+- *t_min* = 2 weeks, *t_max* = 52 weeks
+- *r_min* = 2.5%, *r_max* = 100%
+
+---
+
+## Enhanced Bond Discounts
+
+Active RBT Notes unlock scaled bond discounts based on term length and amount locked. The discount bonus applies automatically when purchasing bonds, with longer commitments and larger positions earning greater advantages.
+
+### Formula
+
+```
+Eligibility:
+- Note Term > 12 weeks
+- RBT Amount ≥ Minimum Threshold
+
+Thresholds (governance-adjustable):
+- Min Threshold = sqrt(Total RBT Supply) × K1
+- Max Threshold = sqrt(Total RBT Supply) × K2
+- Initial values: K1 = 0.01, K2 = 0.1
+
+Bonus Calculation:
+- Term Factor = (Note Term - 12) / (52 - 12)
+- Amount Factor = min((RBT Amount - Min Threshold) / (Max Threshold - Min Threshold), 1)
+- Combined Factor = (Term Factor + Amount Factor) / 2
+- Bonus Discount = Combined Factor × 2.5%
+
+Final Bond Discount = Base Discount (from debt ratio) + Bonus Discount
+```
+
+As total RBT supply grows, thresholds scale proportionally via the square root function. Governance may adjust K1 and K2 parameters to maintain appropriate dollar-value requirements as market conditions evolve:
+
+$$
+D_{\text{final}} = D_{\text{base}} + \left[\frac{1}{2}\left(\frac{t - 12}{52 - 12} + \min\left(\frac{A - K_1\sqrt{S}}{(K_2 - K_1)\sqrt{S}}, 1\right)\right) \times 0.025\right]
+$$
+
+where:
+
+- *D_final* = final bond discount
+- *D_base* = base discount from debt ratio
+- *t* = Note term in weeks
+- *A* = RBT amount locked in Note
+- *S* = total RBT circulating supply
+- *K1* = 0.01, *K2* = 0.1
+
