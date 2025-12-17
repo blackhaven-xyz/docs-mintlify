@@ -54,7 +54,7 @@
   },
   "logo": {
     "light": "/logo/Blackhaven.png",
-    "dark": "/logo/Blackhaven.png"
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [],
