@@ -3,9 +3,12 @@
   "theme": "mint",
   "name": "Blackhaven",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#a3d977",
+    "light": "#d4ffaf",
+    "dark": "#8bc34a"
+  },
+  "styling": {
+    "customCss": "style.css"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -35,7 +38,18 @@
       }
     ],
     "global": {
-      "anchors": []
+      "anchors": [
+        {
+          "anchor": "Twitter",
+          "icon": "x-twitter",
+          "href": "https://x.com/blackhaven"
+        },
+        {
+          "anchor": "Discord",
+          "icon": "discord",
+          "href": "https://discord.gg/3pDXD9ygAV"
+        }
+      ]
     }
   },
   "logo": {

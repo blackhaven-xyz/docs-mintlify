@@ -1,0 +1,62 @@
+/* Custom callout colors */
+
+/* Tip callouts - lime */
+/* Dark mode: light lime #d4ffaf */
+.dark [data-callout-type='tip'] {
+  border-color: #d4ffaf !important;
+  background-color: rgba(212, 255, 175, 0.1) !important;
+}
+
+.dark [data-callout-type='tip'] svg {
+  color: #d4ffaf !important;
+}
+
+/* Light mode: darker green #689f38 */
+:root:not(.dark) [data-callout-type='tip'],
+html:not(.dark) [data-callout-type='tip'] {
+  border-color: #689f38 !important;
+  background-color: rgba(104, 159, 56, 0.1) !important;
+}
+
+:root:not(.dark) [data-callout-type='tip'] svg,
+html:not(.dark) [data-callout-type='tip'] svg {
+  color: #689f38 !important;
+}
+
+/* Note callouts - blue-gray #94A8D3 */
+[data-callout-type='note'] {
+  border-color: #94a8d3 !important;
+  background-color: rgba(148, 168, 211, 0.1) !important;
+}
+
+[data-callout-type='note'] svg {
+  color: #94a8d3 !important;
+}
+
+/* Info callouts - ash */
+/* Dark mode: light ash #eeece9 */
+.dark [data-callout-type='info'] {
+  border-color: #eeece9 !important;
+  background-color: rgba(238, 236, 233, 0.1) !important;
+}
+
+.dark [data-callout-type='info'] svg {
+  color: #eeece9 !important;
+}
+
+/* Light mode: darker tan #8b8377 */
+:root:not(.dark) [data-callout-type='info'],
+html:not(.dark) [data-callout-type='info'] {
+  border-color: #8b8377 !important;
+  background-color: rgba(139, 131, 119, 0.1) !important;
+}
+
+:root:not(.dark) [data-callout-type='info'] svg,
+html:not(.dark) [data-callout-type='info'] svg {
+  color: #8b8377 !important;
+}
+
+/* Footer social icons - ozone/primary color on hover */
+#footer a:hover svg {
+  background-color: #d4ffaf !important;
+}
