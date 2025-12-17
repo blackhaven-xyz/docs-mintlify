@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Blackhaven",
   "colors": {
-    "primary": "#a3d977",
-    "light": "#d4ffaf",
-    "dark": "#8bc34a"
+    "primary": "#D4FFAF",
+    "light": "#D4FFAF",
+    "dark": "#D4FFAF"
   },
   "styling": {
     "customCss": "style.css"
@@ -53,8 +53,8 @@
     }
   },
   "logo": {
-    "light": "/logo/dark.png",
-    "dark": "/logo/Blackhaven.png"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [],
