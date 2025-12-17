@@ -1,10 +1,11 @@
 /* Custom callout colors */
 
-/* Tip callouts - lime */
+/* Tip callouts - lime, no background */
 /* Dark mode: light lime #d4ffaf */
 .dark [data-callout-type='tip'] {
   border-color: #d4ffaf !important;
-  background-color: rgba(212, 255, 175, 0.1) !important;
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 .dark [data-callout-type='tip'] svg {
@@ -15,7 +16,8 @@
 :root:not(.dark) [data-callout-type='tip'],
 html:not(.dark) [data-callout-type='tip'] {
   border-color: #689f38 !important;
-  background-color: rgba(104, 159, 56, 0.1) !important;
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 :root:not(.dark) [data-callout-type='tip'] svg,
@@ -23,21 +25,24 @@ html:not(.dark) [data-callout-type='tip'] svg {
   color: #689f38 !important;
 }
 
-/* Note callouts - blue-gray #94A8D3 */
-[data-callout-type='note'] {
+/* Note callouts - blue-gray #94A8D3, no background */
+[data-callout-type='note'],
+.callout[data-callout-type='note'] {
   border-color: #94a8d3 !important;
-  background-color: rgba(148, 168, 211, 0.1) !important;
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 [data-callout-type='note'] svg {
   color: #94a8d3 !important;
 }
 
-/* Info callouts - ash */
+/* Info callouts - ash, no background */
 /* Dark mode: light ash #eeece9 */
 .dark [data-callout-type='info'] {
   border-color: #eeece9 !important;
-  background-color: rgba(238, 236, 233, 0.1) !important;
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 .dark [data-callout-type='info'] svg {
@@ -48,7 +53,8 @@ html:not(.dark) [data-callout-type='tip'] svg {
 :root:not(.dark) [data-callout-type='info'],
 html:not(.dark) [data-callout-type='info'] {
   border-color: #8b8377 !important;
-  background-color: rgba(139, 131, 119, 0.1) !important;
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 :root:not(.dark) [data-callout-type='info'] svg,
@@ -56,7 +62,139 @@ html:not(.dark) [data-callout-type='info'] svg {
   color: #8b8377 !important;
 }
 
-/* Footer social icons - ozone/primary color on hover */
-#footer a:hover svg {
+/* All callouts - transparent background */
+.callout {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Footer social icons */
+/* Light mode hover: change to dark navy */
+:root:not(.dark) #footer a:hover svg,
+html:not(.dark) #footer a:hover svg {
+  background-color: #061235 !important;
+}
+
+/* Dark mode hover: lime color */
+.dark #footer a:hover svg {
   background-color: #d4ffaf !important;
+}
+
+/* Site background color - dark navy #061235 */
+:root.dark,
+.dark {
+  --background-dark: #061235 !important;
+  --tw-gradient-from: #061235 !important;
+  background-color: #061235 !important;
+}
+
+.dark body,
+.dark #layout,
+.dark main,
+.dark #sidebar,
+.dark #sidebar-content {
+  background-color: #061235 !important;
+}
+
+/* Override gradient backgrounds in dark mode */
+.dark .from-background-dark,
+.dark [class*='from-background-dark'] {
+  --tw-gradient-from: #061235 !important;
+}
+
+.dark .bg-background-dark,
+.dark [class*='bg-background-dark'] {
+  background-color: #061235 !important;
+}
+
+/* Search bar and mobile sidebar */
+.dark [class*='bg-gray-950'],
+.dark [class*='bg-slate-950'],
+.dark [class*='bg-zinc-950'] {
+  background-color: #061235 !important;
+}
+
+/* Launch App button - same styling for both modes */
+/* Navy text on lime background */
+#topbar-cta-button a,
+#topbar-cta-button a span,
+#topbar-cta-button a *,
+nav #topbar-cta-button a,
+#navbar #topbar-cta-button a {
+  color: #061235 !important;
+}
+
+#topbar-cta-button .bg-primary-dark,
+#topbar-cta-button [class*='bg-primary'] {
+  background-color: #d4ffaf !important;
+}
+
+/* Light mode: use dark navy #061235 for text and backgrounds */
+:root:not(.dark) #sidebar a.text-primary,
+html:not(.dark) #sidebar a.text-primary,
+:root:not(.dark) #sidebar [class*='text-primary'],
+html:not(.dark) #sidebar [class*='text-primary'],
+:root:not(.dark) .text-primary,
+html:not(.dark) .text-primary,
+:root:not(.dark) [class*='text-primary']:not([class*='dark:']),
+html:not(.dark) [class*='text-primary']:not([class*='dark:']) {
+  color: #061235 !important;
+}
+
+/* Light mode: dark navy background for primary buttons */
+:root:not(.dark) .bg-primary-dark,
+html:not(.dark) .bg-primary-dark,
+:root:not(.dark) [class*='bg-primary-dark'],
+html:not(.dark) [class*='bg-primary-dark'],
+:root:not(.dark) .bg-primary,
+html:not(.dark) .bg-primary {
+  background-color: #061235 !important;
+}
+
+/* Light mode: lime text on dark navy buttons */
+:root:not(.dark) #topbar-cta-button a,
+html:not(.dark) #topbar-cta-button a {
+  color: #d4ffaf !important;
+}
+
+/* Sidebar anchor links (Twitter, Discord) hover */
+/* Light mode: navy on hover */
+:root:not(.dark) #sidebar a.nav-anchor:hover,
+html:not(.dark) #sidebar a.nav-anchor:hover,
+:root:not(.dark) #sidebar .link.nav-anchor:hover,
+html:not(.dark) #sidebar .link.nav-anchor:hover,
+:root:not(.dark) #navigation-items a.nav-anchor:hover,
+html:not(.dark) #navigation-items a.nav-anchor:hover {
+  color: #061235 !important;
+}
+
+/* Dark mode: lime on hover */
+.dark #sidebar a.nav-anchor:hover,
+.dark #sidebar .link.nav-anchor:hover,
+.dark #navigation-items a.nav-anchor:hover {
+  color: #d4ffaf !important;
+}
+
+/* Sidebar anchor icon background - navy on hover for both modes */
+#sidebar a.nav-anchor:hover > div,
+#sidebar .link.nav-anchor:hover > div,
+#navigation-items a.nav-anchor:hover > div,
+a.nav-anchor:hover > div.mr-4 {
+  background: #061235 !important;
+  background-color: #061235 !important;
+}
+
+/* Navbar icons (theme toggle, etc.) */
+/* Light mode: blue on hover */
+:root:not(.dark) #navbar button:hover svg,
+:root:not(.dark) #navbar button.group:hover svg,
+html:not(.dark) #navbar button:hover svg,
+html:not(.dark) #navbar button.group:hover svg {
+  color: #061235 !important;
+}
+
+/* Dark mode: lime on hover */
+.dark #navbar button:hover svg,
+.dark #navbar button.group:hover svg {
+  color: #d4ffaf !important;
 }
