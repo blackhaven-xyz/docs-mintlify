@@ -81,12 +81,7 @@
     },
     {
       "group": "HVN Token",
-      "pages": [
-        "hvn/governance",
-        "hvn/staking",
-        "hvn/proximity",
-        "hvn/bribe-market"
-      ]
+      "pages": ["hvn/governance", "hvn/staking", "hvn/proximity"]
     },
     {
       "group": "Treasury",
