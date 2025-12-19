@@ -95,7 +95,7 @@
     },
     {
       "group": "Resources",
-      "pages": ["resources/risks", "resources/glossary"]
+      "pages": ["resources/risks"]
     }
   ],
   "footerSocials": {
