@@ -5,7 +5,7 @@ icon: 'note-sticky'
 
 RBT Notes are fixed-term lockup instruments issued as **ERC-721 NFTs** that let holders earn **guaranteed yield** by committing their RBT for a set period. Unlike liquid staking where rewards vary and capital can leave at any time, Notes offer a simple proposition: lock now, know your exact return, collect at maturity.
 
-## How Notes Work
+### How Notes Work
 
 <Steps>
   <Step title="Choose Term">Select your lockup duration (up to 52 weeks)</Step>
@@ -24,7 +24,7 @@ RBT Notes are fixed-term lockup instruments issued as **ERC-721 NFTs** that let 
   dependencies.
 </Note>
 
-## Yield Curve
+### Yield Curve
 
 Yield scales with term length, combining a base yield with a bonus that accelerates for longer commitments:
 
@@ -53,7 +53,7 @@ Yield(t) = r_base × (t / t_max) + r_bonus × (t / t_max)²
   component.
 </Tip>
 
-## Early Exit
+### Early Exit
 
 You can redeem before maturity, but it comes with **two costs**:
 
@@ -92,7 +92,7 @@ graph LR
   complete their terms.
 </Info>
 
-## Rewards Pool
+### Rewards Pool
 
 <Warning>
   RBT Notes yield is funded by a **capped rewards pool**. When the pool is fully
@@ -118,7 +118,7 @@ Deposits reopen as rewards flow back into the pool. **First come, first serve.**
   </Card>
 </CardGroup>
 
-## Enhanced Bond Discounts
+### Enhanced Bond Discounts
 
 Active RBT Notes unlock **scaled bond discounts** based on term length and amount locked. The discount bonus applies automatically when purchasing bonds.
 
