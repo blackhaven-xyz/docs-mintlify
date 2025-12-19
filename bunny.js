@@ -453,6 +453,20 @@
     .bh-hidden .bh-heart {
       display: none !important;
     }
+    
+    /* Hide bunny and toggle on mobile */
+    @media (max-width: 768px) {
+      #bh-bunny-zone,
+      #bh-bubble,
+      #bh-dream-bubble,
+      #bh-snot-bubble,
+      #bh-exclaim,
+      #bh-toggle,
+      .bh-zzz,
+      .bh-heart {
+        display: none !important;
+      }
+    }
   `;
   document.head.appendChild(style);
 
@@ -548,31 +562,35 @@
 
   // Default phrases (fallback if config fails to load)
   let facts = [
-    "RBT backing grows as treasury grows",
-    "HPNs are principal-protected",
-    "sHVN = staked HVN for rewards",
-    "52-week Note = 52% yield",
-    "Built for MegaETH 🚀",
+    'RBT backing grows as treasury grows',
+    'HPNs are principal-protected',
+    'sHVN = staked HVN for rewards',
+    '52-week Note = 52% yield',
+    'Built for MegaETH 🚀',
   ];
 
   // Load phrases from config file
   fetch('/bunny-config.json')
-    .then(res => res.json())
-    .then(config => {
+    .then((res) => res.json())
+    .then((config) => {
       if (config.phrases && config.phrases.length > 0) {
         facts = config.phrases;
-        console.log('[Blackhaven] Loaded', facts.length, 'bunny phrases from config');
+        console.log(
+          '[Blackhaven] Loaded',
+          facts.length,
+          'bunny phrases from config'
+        );
       }
     })
-    .catch(err => console.log('[Blackhaven] Using default phrases'));
+    .catch((err) => console.log('[Blackhaven] Using default phrases'));
 
   function updatePositions() {
     zone.style.left = position + 'px';
-    bubble.style.left = (position + 25) + 'px';
-    dreamBubble.style.left = (position + 45) + 'px';
-    snotBubble.style.left = (position + 55) + 'px';
-    exclaim.style.left = (position + 20) + 'px';
-    exclaim.style.bottom = (state === 'sleeping' ? '60px' : '80px');
+    bubble.style.left = position + 25 + 'px';
+    dreamBubble.style.left = position + 45 + 'px';
+    snotBubble.style.left = position + 55 + 'px';
+    exclaim.style.left = position + 20 + 'px';
+    exclaim.style.bottom = state === 'sleeping' ? '60px' : '80px';
   }
 
   function showFact() {
@@ -595,7 +613,8 @@
 
     if (position >= window.innerWidth - 100) direction = -1;
     if (position <= 30) direction = 1;
-    zone.querySelector('#bh-bunny').style.transform = direction === -1 ? 'scaleX(-1)' : 'scaleX(1)';
+    zone.querySelector('#bh-bunny').style.transform =
+      direction === -1 ? 'scaleX(-1)' : 'scaleX(1)';
 
     const distance = Math.random() * 80 + 20;
     const steps = 10;
@@ -619,9 +638,11 @@
     if (state !== 'sleeping') return;
     const zzz = document.createElement('div');
     zzz.className = 'bh-zzz';
-    zzz.textContent = ['Z', 'Zz', 'ZzZ', 'z', 'zZ'][Math.floor(Math.random() * 5)];
-    zzz.style.fontSize = (12 + Math.random() * 10) + 'px';
-    zzz.style.left = (position + 20 + Math.random() * 15) + 'px';
+    zzz.textContent = ['Z', 'Zz', 'ZzZ', 'z', 'zZ'][
+      Math.floor(Math.random() * 5)
+    ];
+    zzz.style.fontSize = 12 + Math.random() * 10 + 'px';
+    zzz.style.left = position + 20 + Math.random() * 15 + 'px';
     zzz.style.bottom = '70px';
     document.body.appendChild(zzz);
     setTimeout(() => zzz.remove(), 3000);
@@ -629,7 +650,7 @@
 
   function showDreamBubble() {
     if (state !== 'sleeping') return;
-    dreamBubble.style.left = (position + 35) + 'px';
+    dreamBubble.style.left = position + 35 + 'px';
     dreamBubble.style.bottom = '75px';
     dreamBubble.style.opacity = '1';
     dreamBubble.style.display = 'flex';
@@ -644,7 +665,7 @@
     const heart = document.createElement('div');
     heart.className = 'bh-heart';
     heart.textContent = '💚';
-    heart.style.left = (position + 15 + Math.random() * 20) + 'px';
+    heart.style.left = position + 15 + Math.random() * 20 + 'px';
     heart.style.bottom = '70px';
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 1000);
@@ -754,9 +775,15 @@
   updatePositions();
 
   // Random behaviors when awake
-  setInterval(() => { if (state === 'awake' && Math.random() > 0.5) walk(); }, 7000);
-  setInterval(() => { if (state === 'awake' && Math.random() > 0.7) showFact(); }, 18000);
-  setInterval(() => { if (state === 'awake' && Math.random() > 0.8) hop(); }, 12000);
+  setInterval(() => {
+    if (state === 'awake' && Math.random() > 0.5) walk();
+  }, 7000);
+  setInterval(() => {
+    if (state === 'awake' && Math.random() > 0.7) showFact();
+  }, 18000);
+  setInterval(() => {
+    if (state === 'awake' && Math.random() > 0.8) hop();
+  }, 12000);
 
   // Random blinking when awake
   function blink() {
@@ -818,7 +845,9 @@
     snotBubble.style.display = 'none';
 
     // Remove all ZZZs and hearts
-    document.querySelectorAll('.bh-zzz, .bh-heart').forEach(el => el.remove());
+    document
+      .querySelectorAll('.bh-zzz, .bh-heart')
+      .forEach((el) => el.remove());
 
     // Add hopping-out animation class (only for bunny zone)
     document.body.classList.add('bh-hopping-out');
@@ -846,4 +875,3 @@
 
   console.log('[Blackhaven] Bunny loaded with smooth sleep transitions 💤');
 })();
-
