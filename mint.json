@@ -64,9 +64,10 @@
     {
       "group": "Products",
       "pages": [
-        "products/haven-protected-notes",
         "products/fixed-term-bonds",
         "products/blackhaven-dex",
+
+        "products/haven-protected-notes",
         "treasury/bam"
       ]
     },
