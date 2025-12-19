@@ -79,18 +79,18 @@ div[class*="Sidebar"] {
 
 /* ===== SIDEBAR NAVIGATION ===== */
 
-/* Default State - All nav links are muted */
-nav a,
-aside a {
+/* Default State - All nav links are muted (except special buttons) */
+nav a:not([href*="blackhaven.io"]),
+aside a:not([href*="blackhaven.io"]) {
     color: var(--bh-text-muted) !important;
     background-color: transparent !important;
     border-left: 3px solid transparent !important;
     transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
-/* Hover State - exclude social icons */
-nav a:not([href*="x.com"]):not([href*="discord"]):hover,
-aside a:not([href*="x.com"]):not([href*="discord"]):hover {
+/* Hover State - exclude social icons and Launch App button */
+nav a:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]):hover,
+aside a:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]):hover {
     color: var(--bh-accent) !important;
     background-color: var(--bh-accent-soft) !important;
 }
@@ -154,10 +154,16 @@ a[href*="blackhaven.io"] span {
     background: transparent !important;
 }
 
-a[href*="blackhaven.io"]:hover {
+a[href*="blackhaven.io"]:hover,
+header a[href*="blackhaven.io"]:hover,
+nav a[href*="blackhaven.io"]:hover,
+aside a[href*="blackhaven.io"]:hover {
     background: #C5F59E !important;
+    background-color: #C5F59E !important;
+    color: #000000 !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(212, 255, 175, 0.4) !important;
+    border: none !important;
 }
 
 /* ===== LOGO STYLING ===== */
@@ -300,6 +306,17 @@ img {
     border: 1px solid var(--bh-border) !important;
 }
 
+/* Full-width diagram images */
+img[alt*="Flow Diagram"],
+img[alt*="Diagram"],
+img[src*="blackhavenbunnies"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 1.5rem auto !important;
+}
+
 /* ===== ACCORDIONS ===== */
 details,
 [class*="Accordion"] {
@@ -323,15 +340,35 @@ a[href*="discord"]:hover {
 }
 
 /* Make X and Discord icons Ozone green to match theme */
+/* pointer-events: none ensures hover goes to parent anchor, not icon itself */
 a[href*="x.com"] svg,
 a[href*="x.com"] svg *,
 a[href*="x.com"] svg path,
+a[href*="x.com"] div,
+a[href*="x.com"]>*,
 a[href*="discord"] svg,
 a[href*="discord"] svg *,
-a[href*="discord"] svg path {
+a[href*="discord"] svg path,
+a[href*="discord"] div,
+a[href*="discord"]>* {
     color: #D4FFAF !important;
     fill: #D4FFAF !important;
     filter: none !important;
+    transition: all 0.2s ease !important;
+    pointer-events: none !important;
+}
+
+/* On hover: icon turns Haven Night blue for contrast against green bg */
+a[href*="x.com"]:hover svg,
+a[href*="x.com"]:hover svg *,
+a[href*="x.com"]:hover svg path,
+a[href*="discord"]:hover svg,
+a[href*="discord"]:hover svg *,
+a[href*="discord"]:hover svg path {
+    color: #061235 !important;
+    fill: #061235 !important;
+    /* Filter to convert to dark blue - brightness(0) makes black, then invert/sepia/hue-rotate to get #061235 */
+    filter: brightness(0) saturate(100%) invert(7%) sepia(30%) saturate(3000%) hue-rotate(200deg) brightness(95%) contrast(105%) !important;
 }
 
 /* ===== FOCUS STATES ===== */
