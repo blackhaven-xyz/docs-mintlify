@@ -341,6 +341,118 @@
       0% { opacity: 1; transform: translateY(0) scale(0.5); }
       100% { opacity: 0; transform: translateY(-40px) scale(1); }
     }
+    
+    /* ===== BUNNY TOGGLE - CARROT BUTTON ===== */
+    #bh-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #11141D;
+      border: 2px solid #1F2937;
+      cursor: pointer;
+      z-index: 999998;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      font-size: 20px;
+      line-height: 1;
+    }
+    
+    #bh-toggle:hover {
+      border-color: #D4FFAF;
+      transform: scale(1.1);
+      box-shadow: 0 4px 20px rgba(212, 255, 175, 0.2);
+    }
+    
+    #bh-toggle .carrot {
+      transition: all 0.3s ease;
+    }
+    
+    /* Active state - bunny visible */
+    #bh-toggle.active {
+      background: rgba(212, 255, 175, 0.15);
+      border-color: #D4FFAF;
+    }
+    
+    #bh-toggle.active .carrot {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    /* Inactive state - bunny hidden */
+    #bh-toggle.inactive {
+      background: #0D0F14;
+      border-color: #374151;
+    }
+    
+    #bh-toggle.inactive .carrot {
+      opacity: 0.4;
+      transform: scale(0.85);
+      filter: grayscale(100%);
+    }
+    
+    /* Hop in animation */
+    @keyframes bh-hop-in {
+      0% { 
+        transform: translateY(150px);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      50% { 
+        transform: translateY(-20px);
+      }
+      70% {
+        transform: translateY(5px);
+      }
+      85% {
+        transform: translateY(-8px);
+      }
+      100% { 
+        transform: translateY(0);
+      }
+    }
+    
+    .bh-hopping-in #bh-bunny-zone {
+      animation: bh-hop-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+    }
+    
+    /* Hop out animation - reverse of hop in */
+    @keyframes bh-hop-out {
+      0% { 
+        transform: translateY(0);
+        opacity: 1;
+      }
+      20% {
+        transform: translateY(-15px);
+        opacity: 1;
+      }
+      100% { 
+        transform: translateY(150px);
+        opacity: 0;
+      }
+    }
+    
+    .bh-hopping-out #bh-bunny-zone {
+      animation: bh-hop-out 0.5s ease-in forwards !important;
+    }
+    
+    /* Hide bunny and ALL related elements when toggled off */
+    .bh-hidden #bh-bunny-zone,
+    .bh-hidden #bh-bubble,
+    .bh-hidden #bh-dream-bubble,
+    .bh-hidden #bh-snot-bubble,
+    .bh-hidden #bh-exclaim,
+    .bh-hidden .bh-zzz,
+    .bh-hidden .bh-heart {
+      display: none !important;
+    }
   `;
   document.head.appendChild(style);
 
@@ -419,6 +531,9 @@
     <div id="bh-snot-bubble"></div>
     <div id="bh-bubble"></div>
     <div id="bh-exclaim">!</div>
+    <button id="bh-toggle" title="Toggle Bunny">
+      <span class="carrot">🥕</span>
+    </button>
   `;
 
   const container = document.createElement('div');
@@ -645,7 +760,7 @@
 
   // Random blinking when awake
   function blink() {
-    if (state === 'awake') {
+    if (state === 'awake' && !bunnyHidden) {
       zone.classList.add('bh-blinking');
       setTimeout(() => zone.classList.remove('bh-blinking'), 150);
     }
@@ -660,6 +775,74 @@
 
   // Initial walk
   setTimeout(walk, 2500);
+
+  // ===== TOGGLE BUTTON LOGIC =====
+  const toggleBtn = document.getElementById('bh-toggle');
+  let bunnyHidden = localStorage.getItem('bh-bunny-hidden') === 'true';
+
+  function updateToggleState() {
+    if (bunnyHidden) {
+      document.body.classList.add('bh-hidden');
+      toggleBtn.classList.remove('active');
+      toggleBtn.classList.add('inactive');
+      toggleBtn.title = 'Show Bunny';
+    } else {
+      document.body.classList.remove('bh-hidden');
+      toggleBtn.classList.add('active');
+      toggleBtn.classList.remove('inactive');
+      toggleBtn.title = 'Hide Bunny';
+    }
+  }
+
+  function showBunnyWithAnimation() {
+    bunnyHidden = false;
+    localStorage.setItem('bh-bunny-hidden', 'false');
+
+    // First update state to show bunny
+    updateToggleState();
+
+    // Add hopping-in animation class
+    document.body.classList.add('bh-hopping-in');
+
+    // Remove animation class after animation completes
+    setTimeout(() => {
+      document.body.classList.remove('bh-hopping-in');
+    }, 900);
+  }
+
+  function hideBunny() {
+    // Immediately hide dialog, exclamation and remove any floating elements
+    bubble.classList.remove('show');
+    exclaim.classList.remove('show');
+    dreamBubble.style.display = 'none';
+    snotBubble.style.display = 'none';
+
+    // Remove all ZZZs and hearts
+    document.querySelectorAll('.bh-zzz, .bh-heart').forEach(el => el.remove());
+
+    // Add hopping-out animation class (only for bunny zone)
+    document.body.classList.add('bh-hopping-out');
+
+    // After animation completes, actually hide
+    setTimeout(() => {
+      document.body.classList.remove('bh-hopping-out');
+      bunnyHidden = true;
+      localStorage.setItem('bh-bunny-hidden', 'true');
+      updateToggleState();
+    }, 500);
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (bunnyHidden) {
+      showBunnyWithAnimation();
+    } else {
+      hideBunny();
+    }
+  });
+
+  // Initialize toggle state on load
+  updateToggleState();
 
   console.log('[Blackhaven] Bunny loaded with smooth sleep transitions 💤');
 })();

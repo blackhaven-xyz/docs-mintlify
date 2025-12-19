@@ -99,6 +99,17 @@ The bunny has three states:
 - **Sleeping** - Breathing animation with ZzZ effects and dream bubbles
 - **Angry** - Turns red when disturbed while sleeping
 
+### Toggle Button
+
+A carrot toggle button (🥕) in the bottom-right corner allows users to show/hide the bunny:
+
+- **Click to toggle** - Bunny hops in/out with animation
+- **Persists preference** - Saved to localStorage
+- **🥕 bright** = Bunny visible
+- **🥕 dimmed** = Bunny hidden
+
+When hiding, all elements (dialog, ZZZs, dream bubbles) are immediately cleared before the bunny hops out.
+
 ### Configuring Dialog Phrases
 
 Edit `bunny-config.json` to customize the bunny's dialog:
