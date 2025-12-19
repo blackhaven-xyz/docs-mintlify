@@ -65,19 +65,18 @@
       "group": "Products",
       "pages": [
         "products/fixed-term-bonds",
-        {
-          "group": "Blackhaven DEX",
-          "pages": [
-            "products/blackhaven-dex",
-            "products/dex/swap",
-            "products/dex/liquidity-provision",
-            "products/dex/liquidity-bonds",
-            "products/dex/dca"
-          ]
-        },
-
         "products/haven-protected-notes",
         "treasury/bam"
+      ]
+    },
+    {
+      "group": "Spot trading",
+      "pages": [
+        "spot-trading/overview",
+        "spot-trading/swap",
+        "spot-trading/liquidity-provision",
+        "spot-trading/liquidity-bonds",
+        "spot-trading/dca"
       ]
     },
     {
