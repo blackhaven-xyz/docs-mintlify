@@ -91,7 +91,7 @@
     },
     {
       "group": "Treasury",
-      "pages": ["treasury/overview", "hvn/fees"]
+      "pages": ["treasury/overview", "treasury/fees"]
     },
     {
       "group": "Resources",
