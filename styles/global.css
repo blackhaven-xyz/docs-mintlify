@@ -9,90 +9,97 @@
 
 /* ===== HIDE DOCUMENTATION TAB ===== */
 /* Mintlify auto-generates this - it's redundant with Overview */
-nav a[href="/overview"].nav-anchor,
-aside a[href="/overview"].nav-anchor,
-a.nav-anchor[href="/overview"] {
-    display: none !important;
+nav a[href='/overview'].nav-anchor,
+aside a[href='/overview'].nav-anchor,
+a.nav-anchor[href='/overview'] {
+  display: none !important;
 }
 
 /* ===== HIDE POWERED BY MINTLIFY ===== */
-[class*="PoweredBy"],
-[class*="powered-by"],
-a[href*="mintlify.com"],
-footer a[href*="mintlify"],
-div[class*="Footer"] a[href*="mintlify"],
+[class*='PoweredBy'],
+[class*='powered-by'],
+a[href*='mintlify.com'],
+footer a[href*='mintlify'],
+div[class*='Footer'] a[href*='mintlify'],
 .powered-by-mintlify {
-    display: none !important;
+  display: none !important;
 }
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    /* Dark Theme Only */
-    --bh-bg: #0A0C14;
-    --bh-sidebar: #07080D;
-    --bh-text: #F3F4F6;
-    --bh-text-muted: #9CA3AF;
-    --bh-border: #1F2937;
-    --bh-accent: #D4FFAF;
-    --bh-accent-glow: rgba(212, 255, 175, 0.2);
-    --bh-accent-soft: rgba(212, 255, 175, 0.08);
-    --bh-card-bg: #11141D;
-    --bh-table-header: #11141D;
+  /* Dark Theme Only */
+  --bh-bg: #0a0c14;
+  --bh-sidebar: #07080d;
+  --bh-text: #f3f4f6;
+  --bh-text-muted: #9ca3af;
+  --bh-border: #1f2937;
+  --bh-accent: #d4ffaf;
+  --bh-accent-glow: rgba(212, 255, 175, 0.2);
+  --bh-accent-soft: rgba(212, 255, 175, 0.08);
+  --bh-card-bg: #11141d;
+  --bh-table-header: #11141d;
 }
 
 /* Force dark mode */
 html {
-    color-scheme: dark !important;
+  color-scheme: dark !important;
 }
 
 /* ===== GLOBAL STYLES ===== */
 body {
-    background-color: var(--bh-bg) !important;
-    color: var(--bh-text) !important;
-    font-family: 'Inter', sans-serif !important;
-    -webkit-font-smoothing: antialiased;
+  background-color: var(--bh-bg) !important;
+  color: var(--bh-text) !important;
+  font-family: 'Inter', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ===== MINTLIFY PRIMARY COLOR OVERRIDE ===== */
 :root,
 .dark,
 html.dark,
-[data-theme="dark"] {
-    --primary: #D4FFAF !important;
-    --primary-light: #D4FFAF !important;
-    --primary-dark: #D4FFAF !important;
+[data-theme='dark'] {
+  --primary: #d4ffaf !important;
+  --primary-light: #d4ffaf !important;
+  --primary-dark: #d4ffaf !important;
 }
 
 /* Override all text-primary to green */
 .text-primary,
-[class*="text-primary"] {
-    color: #D4FFAF !important;
+[class*='text-primary'] {
+  color: #d4ffaf !important;
 }
 
 /* ===== SIDEBAR STYLING ===== */
 aside,
-nav[class*="Sidebar"],
-div[class*="Sidebar"] {
-    background-color: var(--bh-sidebar) !important;
-    border-right: 1px solid var(--bh-border) !important;
+nav[class*='Sidebar'],
+div[class*='Sidebar'] {
+  background-color: var(--bh-sidebar) !important;
+  border-right: 1px solid var(--bh-border) !important;
 }
 
 /* ===== SIDEBAR NAVIGATION ===== */
 
 /* Default State - All nav links are muted (except special buttons) */
-nav a:not([href*="blackhaven.io"]),
-aside a:not([href*="blackhaven.io"]) {
-    color: var(--bh-text-muted) !important;
-    background-color: transparent !important;
-    border-left: 3px solid transparent !important;
-    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+nav a:not([href*='blackhaven.io']),
+aside a:not([href*='blackhaven.io']) {
+  color: var(--bh-text-muted) !important;
+  background-color: transparent !important;
+  border-left: 3px solid transparent !important;
+  transition: color 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 /* Hover State - exclude social icons and Launch App button */
-nav a:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]):hover,
-aside a:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]):hover {
-    color: var(--bh-accent) !important;
-    background-color: var(--bh-accent-soft) !important;
+nav
+  a:not([href*='x.com']):not([href*='discord']):not(
+    [href*='blackhaven.io']
+  ):hover,
+aside
+  a:not([href*='x.com']):not([href*='discord']):not(
+    [href*='blackhaven.io']
+  ):hover {
+  color: var(--bh-accent) !important;
+  background-color: var(--bh-accent-soft) !important;
 }
 
 /* Active State - Current Page (sidebar navigation) */
@@ -107,81 +114,80 @@ aside a[class*="text-primary"],
 /* Broad selector for Mintlify's active links - excludes social and launch button */
 a.text-primary:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]),
 a[class*="text-primary"]:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]) {
-    color: #D4FFAF !important;
-    background-color: rgba(212, 255, 175, 0.12) !important;
-    border-left: 3px solid #D4FFAF !important;
-    font-weight: 600 !important;
-    border-radius: 4px !important;
-    padding-left: 10px !important;
+  color: #d4ffaf !important;
+  background-color: rgba(212, 255, 175, 0.12) !important;
+  border-left: none !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
 }
 
 /* Content area headers (like "RBT Token") - green text but NO background */
 /* Higher specificity to override the above */
 main .text-primary,
-main [class*="text-primary"],
+main [class*='text-primary'],
 main a.text-primary,
-main a[class*="text-primary"],
+main a[class*='text-primary'],
 article .text-primary,
-article [class*="text-primary"],
-[class*="Content"] .text-primary,
-[class*="Content"] a.text-primary,
-[class*="PageContent"] .text-primary,
-[class*="Article"] .text-primary {
-    color: #D4FFAF !important;
-    background-color: transparent !important;
-    background: none !important;
-    border-left: none !important;
-    border: none !important;
-    padding: 0 !important;
+article [class*='text-primary'],
+[class*='Content'] .text-primary,
+[class*='Content'] a.text-primary,
+[class*='PageContent'] .text-primary,
+[class*='Article'] .text-primary {
+  color: #d4ffaf !important;
+  background-color: transparent !important;
+  background: none !important;
+  border-left: none !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 /* ===== LAUNCH APP BUTTON ===== */
-a[href*="blackhaven.io"],
-header a[href*="blackhaven.io"] {
-    background: #D4FFAF !important;
-    background-color: #D4FFAF !important;
-    color: #000000 !important;
-    border: none !important;
-    outline: none !important;
-    font-weight: 600 !important;
-    border-radius: 8px !important;
-    padding: 8px 16px !important;
+a[href*='blackhaven.io'],
+header a[href*='blackhaven.io'] {
+  background: #d4ffaf !important;
+  background-color: #d4ffaf !important;
+  color: #000000 !important;
+  border: none !important;
+  outline: none !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
 }
 
-a[href*="blackhaven.io"] *,
-a[href*="blackhaven.io"] span {
-    color: #000000 !important;
-    background: transparent !important;
+a[href*='blackhaven.io'] *,
+a[href*='blackhaven.io'] span {
+  color: #000000 !important;
+  background: transparent !important;
 }
 
-a[href*="blackhaven.io"]:hover,
-header a[href*="blackhaven.io"]:hover,
-nav a[href*="blackhaven.io"]:hover,
-aside a[href*="blackhaven.io"]:hover {
-    background: #C5F59E !important;
-    background-color: #C5F59E !important;
-    color: #000000 !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(212, 255, 175, 0.4) !important;
-    border: none !important;
+a[href*='blackhaven.io']:hover,
+header a[href*='blackhaven.io']:hover,
+nav a[href*='blackhaven.io']:hover,
+aside a[href*='blackhaven.io']:hover {
+  background: #c5f59e !important;
+  background-color: #c5f59e !important;
+  color: #000000 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(212, 255, 175, 0.4) !important;
+  border: none !important;
 }
 
 /* ===== LOGO STYLING ===== */
-a[href="/"],
-a[href="/"]>* {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
+a[href='/'],
+a[href='/'] > * {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
-img[alt*="logo" i],
-img[alt*="Blackhaven" i],
+img[alt*='logo' i],
+img[alt*='Blackhaven' i],
 header img {
-    border: none !important;
-    max-width: 180px !important;
-    width: 180px !important;
-    height: auto !important;
+  border: none !important;
+  max-width: 180px !important;
+  width: 180px !important;
+  height: auto !important;
 }
 
 /* ===== HEADINGS ===== */
@@ -189,199 +195,205 @@ h1,
 h2,
 h3,
 h4 {
-    color: var(--bh-text) !important;
-    letter-spacing: -0.025em !important;
+  color: var(--bh-text) !important;
+  letter-spacing: -0.025em !important;
 }
 
 h1::after {
-    content: "";
-    display: block;
-    width: 48px;
-    height: 4px;
-    background-color: var(--bh-accent);
-    border-radius: 2px;
-    margin-top: 12px;
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background-color: var(--bh-accent);
+  border-radius: 2px;
+  margin-top: 12px;
 }
 
 h2 {
-    border-bottom: 1px solid var(--bh-border) !important;
+  border-bottom: 1px solid var(--bh-border) !important;
 }
 
 /* ===== TABLES ===== */
 table {
-    width: 100% !important;
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-    border: 1px solid var(--bh-border) !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    background-color: var(--bh-card-bg) !important;
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: 1px solid var(--bh-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background-color: var(--bh-card-bg) !important;
 }
 
 th {
-    background-color: var(--bh-table-header) !important;
-    color: var(--bh-text) !important;
-    font-weight: 600 !important;
-    padding: 14px 20px !important;
-    border-bottom: 2px solid var(--bh-border) !important;
+  background-color: var(--bh-table-header) !important;
+  color: var(--bh-text) !important;
+  font-weight: 600 !important;
+  padding: 14px 20px !important;
+  border-bottom: 2px solid var(--bh-border) !important;
 }
 
 td {
-    padding: 16px 20px !important;
-    border-bottom: 1px solid var(--bh-border) !important;
-    background-color: transparent !important;
-    color: var(--bh-text-muted) !important;
+  padding: 16px 20px !important;
+  border-bottom: 1px solid var(--bh-border) !important;
+  background-color: transparent !important;
+  color: var(--bh-text-muted) !important;
 }
 
 tr:hover td {
-    background-color: var(--bh-accent-soft) !important;
+  background-color: var(--bh-accent-soft) !important;
 }
 
 /* ===== CARDS ===== */
 .card,
-[class*="Card"],
-a[class*="Card"],
-[class*="CardGroup"] a {
-    background: var(--bh-card-bg) !important;
-    border: 1px solid var(--bh-border) !important;
-    border-radius: 16px !important;
+[class*='Card'],
+a[class*='Card'],
+[class*='CardGroup'] a {
+  background: var(--bh-card-bg) !important;
+  border: 1px solid var(--bh-border) !important;
+  border-radius: 16px !important;
 }
 
 .card:hover,
-[class*="Card"]:hover,
-a[class*="Card"]:hover,
-[class*="CardGroup"] a:hover {
-    border-color: #D4FFAF !important;
-    box-shadow: 0 10px 30px -10px rgba(212, 255, 175, 0.4) !important;
-    transform: translateY(-2px);
+[class*='Card']:hover,
+a[class*='Card']:hover,
+[class*='CardGroup'] a:hover {
+  border-color: #d4ffaf !important;
+  box-shadow: 0 10px 30px -10px rgba(212, 255, 175, 0.4) !important;
+  transform: translateY(-2px);
 }
 
 /* ===== CALLOUTS ===== */
 .callout,
-[class*="Callout"] {
-    background-color: var(--bh-accent-soft) !important;
-    border: 1px solid var(--bh-border) !important;
-    border-left: 4px solid var(--bh-accent) !important;
-    border-radius: 12px !important;
-    color: var(--bh-text) !important;
+[class*='Callout'] {
+  background-color: var(--bh-accent-soft) !important;
+  border: 1px solid var(--bh-border) !important;
+  border-left: 4px solid var(--bh-accent) !important;
+  border-radius: 12px !important;
+  color: var(--bh-text) !important;
 }
 
 /* ===== SEARCH ===== */
 #search-input,
-[class*="Search"] button {
-    background-color: var(--bh-sidebar) !important;
-    border: 1px solid var(--bh-border) !important;
-    color: var(--bh-text) !important;
+[class*='Search'] button {
+  background-color: var(--bh-sidebar) !important;
+  border: 1px solid var(--bh-border) !important;
+  color: var(--bh-text) !important;
 }
 
 /* ===== TOPBAR ===== */
 header,
-div[class*="Topbar"] {
-    background-color: var(--bh-bg) !important;
-    border-bottom: 1px solid var(--bh-border) !important;
-    backdrop-filter: blur(8px);
+div[class*='Topbar'] {
+  background-color: var(--bh-bg) !important;
+  border-bottom: 1px solid var(--bh-border) !important;
+  backdrop-filter: blur(8px);
 }
 
 /* ===== CODE ===== */
 code {
-    background-color: var(--bh-sidebar) !important;
-    color: var(--bh-accent) !important;
-    border: 1px solid var(--bh-border) !important;
+  background-color: var(--bh-sidebar) !important;
+  color: var(--bh-accent) !important;
+  border: 1px solid var(--bh-border) !important;
 }
 
 pre {
-    background-color: #07080D !important;
-    border: 1px solid var(--bh-border) !important;
+  background-color: #07080d !important;
+  border: 1px solid var(--bh-border) !important;
 }
 
 /* ===== FOOTER ===== */
 footer {
-    border-top: 1px solid var(--bh-border) !important;
-    padding-top: 2rem !important;
+  border-top: 1px solid var(--bh-border) !important;
+  padding-top: 2rem !important;
 }
 
 /* ===== IMAGES ===== */
 img {
-    border-radius: 12px !important;
-    border: 1px solid var(--bh-border) !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--bh-border) !important;
+}
+
+/* Overview image - no rounding */
+img[src*='overview'] {
+  border-radius: 0 !important;
 }
 
 /* Full-width diagram images */
-img[alt*="Flow Diagram"],
-img[alt*="Diagram"],
-img[src*="blackhavenbunnies"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 1.5rem auto !important;
+img[alt*='Flow Diagram'],
+img[alt*='Diagram'],
+img[src*='blackhavenbunnies'] {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 1.5rem auto !important;
 }
 
 /* ===== ACCORDIONS ===== */
 details,
-[class*="Accordion"] {
-    background: var(--bh-card-bg) !important;
-    border: 1px solid var(--bh-border) !important;
-    border-radius: 12px !important;
+[class*='Accordion'] {
+  background: var(--bh-card-bg) !important;
+  border: 1px solid var(--bh-border) !important;
+  border-radius: 12px !important;
 }
 
 summary:hover {
-    background-color: var(--bh-accent-soft) !important;
+  background-color: var(--bh-accent-soft) !important;
 }
 
 /* ===== SOCIAL ICONS ===== */
 /* Prevent hover effects from nav styles */
-a[href*="x.com"],
-a[href*="x.com"]:hover,
-a[href*="discord"],
-a[href*="discord"]:hover {
-    background-color: transparent !important;
-    background: transparent !important;
+a[href*='x.com'],
+a[href*='x.com']:hover,
+a[href*='discord'],
+a[href*='discord']:hover {
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 /* Make X and Discord icons Ozone green to match theme */
 /* pointer-events: none ensures hover goes to parent anchor, not icon itself */
-a[href*="x.com"] svg,
-a[href*="x.com"] svg *,
-a[href*="x.com"] svg path,
-a[href*="x.com"] div,
-a[href*="x.com"]>*,
-a[href*="discord"] svg,
-a[href*="discord"] svg *,
-a[href*="discord"] svg path,
-a[href*="discord"] div,
-a[href*="discord"]>* {
-    color: #D4FFAF !important;
-    fill: #D4FFAF !important;
-    filter: none !important;
-    transition: all 0.2s ease !important;
-    pointer-events: none !important;
+a[href*='x.com'] svg,
+a[href*='x.com'] svg *,
+a[href*='x.com'] svg path,
+a[href*='x.com'] div,
+a[href*='x.com'] > *,
+a[href*='discord'] svg,
+a[href*='discord'] svg *,
+a[href*='discord'] svg path,
+a[href*='discord'] div,
+a[href*='discord'] > * {
+  color: #d4ffaf !important;
+  fill: #d4ffaf !important;
+  filter: none !important;
+  transition: all 0.2s ease !important;
+  pointer-events: none !important;
 }
 
 /* On hover: icon turns Haven Night blue for contrast against green bg */
-a[href*="x.com"]:hover svg,
-a[href*="x.com"]:hover svg *,
-a[href*="x.com"]:hover svg path,
-a[href*="discord"]:hover svg,
-a[href*="discord"]:hover svg *,
-a[href*="discord"]:hover svg path {
-    color: #061235 !important;
-    fill: #061235 !important;
-    /* Filter to convert to dark blue - brightness(0) makes black, then invert/sepia/hue-rotate to get #061235 */
-    filter: brightness(0) saturate(100%) invert(7%) sepia(30%) saturate(3000%) hue-rotate(200deg) brightness(95%) contrast(105%) !important;
+a[href*='x.com']:hover svg,
+a[href*='x.com']:hover svg *,
+a[href*='x.com']:hover svg path,
+a[href*='discord']:hover svg,
+a[href*='discord']:hover svg *,
+a[href*='discord']:hover svg path {
+  color: #061235 !important;
+  fill: #061235 !important;
+  /* Filter to convert to dark blue - brightness(0) makes black, then invert/sepia/hue-rotate to get #061235 */
+  filter: brightness(0) saturate(100%) invert(7%) sepia(30%) saturate(3000%)
+    hue-rotate(200deg) brightness(95%) contrast(105%) !important;
 }
 
 /* ===== FOCUS STATES ===== */
 nav a:focus-visible,
 aside a:focus-visible {
-    outline: 2px solid var(--bh-accent) !important;
-    outline-offset: -2px;
-    border-radius: 4px;
+  outline: 2px solid var(--bh-accent) !important;
+  outline-offset: -2px;
+  border-radius: 4px;
 }
 
 nav a:focus:not(:focus-visible),
 aside a:focus:not(:focus-visible) {
-    outline: none !important;
+  outline: none !important;
 }
 
 /* ===== MATH/LATEX FORMULAS ===== */
@@ -390,80 +402,88 @@ aside a:focus:not(:focus-visible) {
 .katex-display,
 mjx-container,
 .MathJax,
-[class*="math"] {
-    color: var(--bh-accent) !important;
-    overflow-x: visible !important;
-    overflow-y: visible !important;
-    max-width: 100% !important;
+[class*='math'] {
+  color: var(--bh-accent) !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  max-width: 100% !important;
 }
 
 .katex-display,
-mjx-container[display="true"],
+mjx-container[display='true'],
 .MathJax_Display {
-    overflow: visible !important;
-    padding: 0.5rem 0 !important;
+  overflow: visible !important;
+  padding: 0.5rem 0 !important;
 }
 
 .katex .base,
 mjx-math,
 .MathJax span {
-    color: var(--bh-accent) !important;
+  color: var(--bh-accent) !important;
 }
 
 /* Remove scrollbar from math containers */
 .katex-html,
 mjx-container,
 .MathJax {
-    overflow: visible !important;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  overflow: visible !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .katex-html::-webkit-scrollbar,
 mjx-container::-webkit-scrollbar,
 .MathJax::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* ===== STYLED FRAME CONTAINER ===== */
-[class*="Frame"],
+[class*='Frame'],
 .frame,
 figure {
-    background: linear-gradient(135deg, rgba(212, 255, 175, 0.03) 0%, rgba(6, 18, 53, 0.4) 100%) !important;
-    border: 1px solid rgba(212, 255, 175, 0.2) !important;
-    border-radius: 12px !important;
-    padding: 1.5rem !important;
-    margin: 1rem 0 !important;
-    backdrop-filter: blur(8px);
+  background: linear-gradient(
+    135deg,
+    rgba(212, 255, 175, 0.03) 0%,
+    rgba(6, 18, 53, 0.4) 100%
+  ) !important;
+  border: 1px solid rgba(212, 255, 175, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin: 1rem 0 !important;
+  backdrop-filter: blur(8px);
 }
 
-[class*="Frame"]:hover,
+[class*='Frame']:hover,
 .frame:hover,
 figure:hover {
-    border-color: rgba(212, 255, 175, 0.35) !important;
-    box-shadow: 0 0 20px rgba(212, 255, 175, 0.08) !important;
+  border-color: rgba(212, 255, 175, 0.35) !important;
+  box-shadow: 0 0 20px rgba(212, 255, 175, 0.08) !important;
 }
 
 /* ===== FORMULA BOX ===== */
 .formula-box {
-    background: linear-gradient(135deg, rgba(212, 255, 175, 0.04) 0%, rgba(6, 18, 53, 0.5) 100%);
-    border: 1px solid rgba(212, 255, 175, 0.25);
-    border-left: 3px solid var(--bh-accent);
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-    margin: 1rem 0 1.5rem 0;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 255, 175, 0.04) 0%,
+    rgba(6, 18, 53, 0.5) 100%
+  );
+  border: 1px solid rgba(212, 255, 175, 0.25);
+  border-left: 3px solid var(--bh-accent);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0 1.5rem 0;
 }
 
 .formula-box ul {
-    margin: 0.5rem 0;
-    padding-left: 1.25rem;
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
 }
 
 .formula-box li {
-    margin: 0.25rem 0;
-    line-height: 1.6;
+  margin: 0.25rem 0;
+  line-height: 1.6;
 }
 
 .formula-box strong {
-    color: var(--bh-accent);
+  color: var(--bh-accent);
 }
