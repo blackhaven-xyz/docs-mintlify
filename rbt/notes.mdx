@@ -1,6 +1,5 @@
 ---
-title: "RBT Notes"
-icon: "note-sticky"
+title: "Overview"
 ---
 
 RBT Notes are fixed-term lockup instruments issued as ERC-721 NFTs that let holders earn guaranteed yield by committing their RBT for a set period. Unlike liquid staking where rewards vary and capital can leave at any time, Notes offer a simple proposition: lock now, know your exact return, collect at maturity.
@@ -26,7 +25,7 @@ The penalty decreases proportionally with time held. Exit at the start of your t
 Penalties flow back into the contract, funding future yields for holders who complete their terms.
 </Tip>
 
----
+
 
 ## Yield Curve
 
@@ -53,51 +52,4 @@ $$
 - Forfeited yield (early exit from RBT Notes)
 - Principal penalty (early exit from RBT Notes)
 - Forfeited unvested RBT (early redemption from bonds)
-
----
-
-## Enhanced Bond Discounts
-
-Active RBT Notes unlock scaled bond discounts based on term length and amount locked. The discount bonus applies automatically when purchasing bonds, with longer commitments and larger positions earning greater advantages.
-
-**Formula:**
-
-<div className="formula-box">
-
-**Eligibility:**
-- Note Term > 12 weeks
-- RBT Amount ≥ Minimum Threshold
-
-**Thresholds** (governance-adjustable):
-- Min Threshold = 1,000 RBT
-- Max Threshold = 10,000 RBT
-- Maximum Bonus Discount = 2.5%
-
-**Bonus Calculation:**
-- Term Factor = (Note Term − 12) / (52 − 12)
-- Amount Factor = min((RBT Amount − Min Threshold) / (Max Threshold − Min Threshold), 1)
-- Combined Factor = (Term Factor + Amount Factor) / 2
-- Bonus Discount = Combined Factor × Maximum Bonus Discount
-
-**Final Bond Discount** = Base Discount (from debt ratio) + Bonus Discount
-
-</div>
-
-<Info>
-Governance may adjust threshold parameters to maintain appropriate requirements as market conditions evolve.
-</Info>
-
-$$
-D_{\text{final}} = D_{\text{base}} + \left[\frac{1}{2}\left(\frac{t - 12}{52 - 12} + \min\left(\frac{A - T_{\min}}{T_{\max} - T_{\min}}, 1\right)\right) \times B_{\max}\right]
-$$
-
-**where:**
-
-- *D_final* = final bond discount
-- *D_base* = base discount from debt ratio
-- *t* = Note term in weeks
-- *A* = RBT amount locked in Note
-- *T_min* = minimum RBT threshold (1,000 RBT)
-- *T_max* = maximum RBT threshold (10,000 RBT)
-- *B_max* = maximum bonus discount (2.5%)
 

@@ -1,0 +1,47 @@
+---
+title: "Enhanced Bond Discounts"
+---
+
+Active RBT Notes unlock scaled bond discounts based on term length and amount locked. The discount bonus applies automatically when purchasing bonds, with longer commitments and larger positions earning greater advantages.
+
+**Formula:**
+
+<div className="formula-box">
+
+**Eligibility:**
+- Note Term > 12 weeks
+- RBT Amount ≥ Minimum Threshold
+
+**Thresholds** (governance-adjustable):
+- Min Threshold = 1,000 RBT
+- Max Threshold = 10,000 RBT
+- Maximum Bonus Discount = 2.5%
+
+**Bonus Calculation:**
+- Term Factor = (Note Term − 12) / (52 − 12)
+- Amount Factor = min((RBT Amount − Min Threshold) / (Max Threshold − Min Threshold), 1)
+- Combined Factor = (Term Factor + Amount Factor) / 2
+- Bonus Discount = Combined Factor × Maximum Bonus Discount
+
+**Final Bond Discount** = Base Discount (from debt ratio) + Bonus Discount
+
+</div>
+
+<Info>
+Governance may adjust threshold parameters to maintain appropriate requirements as market conditions evolve.
+</Info>
+
+$$
+D_{\text{final}} = D_{\text{base}} + \left[\frac{1}{2}\left(\frac{t - 12}{52 - 12} + \min\left(\frac{A - T_{\min}}{T_{\max} - T_{\min}}, 1\right)\right) \times B_{\max}\right]
+$$
+
+
+| Parameter | Description |
+|-----------|-------------|
+| D_final | Final bond discount |
+| D_base | Base discount from debt ratio |
+| t | Note term in weeks |
+| A | RBT amount locked in Note |
+| T_min | Minimum RBT threshold (1,000 RBT) |
+| T_max | Maximum RBT threshold (10,000 RBT) |
+| B_max | Maximum bonus discount (2.5%) |

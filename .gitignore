@@ -1,0 +1,17 @@
+# Private files - DO NOT PUSH
+PRIVATE_PUSH_INSTRUCTIONS.md
+STYLING_ARCHITECTURE.md
+
+# Dependencies
+node_modules/
+
+# Build output
+.mintlify/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

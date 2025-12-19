@@ -88,22 +88,51 @@ aside a {
     transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
-/* Hover State */
-nav a:hover,
-aside a:hover {
+/* Hover State - exclude social icons */
+nav a:not([href*="x.com"]):not([href*="discord"]):hover,
+aside a:not([href*="x.com"]):not([href*="discord"]):hover {
     color: var(--bh-accent) !important;
     background-color: var(--bh-accent-soft) !important;
 }
 
-/* Active State - Current Page */
+/* Active State - Current Page (sidebar navigation) */
 nav a[data-active="true"],
 aside a[data-active="true"],
 nav a.active,
-aside a.active {
+aside a.active,
+nav a.text-primary,
+aside a.text-primary,
+nav a[class*="text-primary"],
+aside a[class*="text-primary"],
+/* Broad selector for Mintlify's active links - excludes social and launch button */
+a.text-primary:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]),
+a[class*="text-primary"]:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]) {
     color: #D4FFAF !important;
-    background-color: rgba(212, 255, 175, 0.08) !important;
+    background-color: rgba(212, 255, 175, 0.12) !important;
     border-left: 3px solid #D4FFAF !important;
     font-weight: 600 !important;
+    border-radius: 4px !important;
+    padding-left: 10px !important;
+}
+
+/* Content area headers (like "RBT Token") - green text but NO background */
+/* Higher specificity to override the above */
+main .text-primary,
+main [class*="text-primary"],
+main a.text-primary,
+main a[class*="text-primary"],
+article .text-primary,
+article [class*="text-primary"],
+[class*="Content"] .text-primary,
+[class*="Content"] a.text-primary,
+[class*="PageContent"] .text-primary,
+[class*="Article"] .text-primary {
+    color: #D4FFAF !important;
+    background-color: transparent !important;
+    background: none !important;
+    border-left: none !important;
+    border: none !important;
+    padding: 0 !important;
 }
 
 /* ===== LAUNCH APP BUTTON ===== */
@@ -284,10 +313,25 @@ summary:hover {
 }
 
 /* ===== SOCIAL ICONS ===== */
+/* Prevent hover effects from nav styles */
+a[href*="x.com"],
+a[href*="x.com"]:hover,
+a[href*="discord"],
+a[href*="discord"]:hover {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Make X and Discord icons Ozone green to match theme */
 a[href*="x.com"] svg,
-a[href*="discord"] svg {
-    color: var(--bh-accent) !important;
-    fill: var(--bh-accent) !important;
+a[href*="x.com"] svg *,
+a[href*="x.com"] svg path,
+a[href*="discord"] svg,
+a[href*="discord"] svg *,
+a[href*="discord"] svg path {
+    color: #D4FFAF !important;
+    fill: #D4FFAF !important;
+    filter: none !important;
 }
 
 /* ===== FOCUS STATES ===== */

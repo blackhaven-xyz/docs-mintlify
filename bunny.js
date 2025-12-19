@@ -310,6 +310,10 @@
       border: 1px solid #E5E7EB;
       z-index: 1000000;
       pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
     
     #bh-bubble.show { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }

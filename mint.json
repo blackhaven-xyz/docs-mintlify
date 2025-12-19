@@ -43,7 +43,7 @@
         {
             "name": "Discord",
             "icon": "discord",
-            "url": "https://discord.gg/3pDXD9ygAV"
+            "url": "https://discord.gg/GfTkD6xaGC"
         }
     ],
     "navigation": [
@@ -54,10 +54,16 @@
             ]
         },
         {
-            "group": "RBT Token",
+            "group": "Reserve Backed Token",
             "pages": [
                 "rbt/overview",
-                "rbt/notes"
+                {
+                    "group": "RBT Notes",
+                    "pages": [
+                        "rbt/notes",
+                        "rbt/enhanced-bond-discounts"
+                    ]
+                }
             ]
         },
         {
@@ -65,7 +71,8 @@
             "pages": [
                 "products/haven-protected-notes",
                 "products/fixed-term-bonds",
-                "products/blackhaven-dex"
+                "products/blackhaven-dex",
+                "treasury/bam"
             ]
         },
         {
@@ -74,16 +81,14 @@
                 "hvn/governance",
                 "hvn/staking",
                 "hvn/proximity",
-                "hvn/bribe-market",
-                "hvn/baseline",
-                "hvn/fees"
+                "hvn/bribe-market"
             ]
         },
         {
             "group": "Treasury",
             "pages": [
                 "treasury/overview",
-                "treasury/bam"
+                "hvn/fees"
             ]
         },
         {
@@ -96,7 +101,7 @@
     ],
     "footerSocials": {
         "x": "https://x.com/blackhaven",
-        "discord": "https://discord.gg/3pDXD9ygAV"
+        "discord": "https://discord.gg/GfTkD6xaGC"
     },
     "modeToggle": {
         "default": "dark",
