@@ -163,18 +163,20 @@ Final Bond Discount = Base Discount + Bonus Discount
 ### Mathematical Formula
 
 $$
-D_{\text{final}} = D_{\text{base}} + \left[\frac{1}{2}\left(\frac{t - 12}{52 - 12} + \min\left(\frac{A - T_{\min}}{T_{\max} - T_{\min}}, 1\right)\right) \times B_{\max}\right]
+D_{\text{final}} = D_{\text{base}} + \left[\frac{1}{2}\left(\frac{t - t_{\min}}{t_{\max} - t_{\min}} + \min\left(\frac{A - A_{\min}}{A_{\max} - A_{\min}}, 1\right)\right) \times B_{\max}\right]
 $$
 
 Where:
 
-- **D_final** = Final bond discount
-- **D_base** = Base discount from debt ratio
-- **t** = Note term in weeks
-- **A** = RBT amount locked in Note
-- **T_min** = Minimum RBT threshold (1,000 RBT)
-- **T_max** = Maximum RBT threshold (10,000 RBT)
-- **B_max** = Maximum bonus discount (2.5%)
+- $D_{\text{final}}$ = final bond discount
+- $D_{\text{base}}$ = base discount from debt ratio
+- $t$ = Note term in weeks
+- $t_{\min}$ = minimum term requirement (12 weeks)
+- $t_{\max}$ = maximum term (52 weeks)
+- $A$ = RBT amount locked in Note
+- $A_{\min}$ = minimum RBT threshold (1,000 RBT)
+- $A_{\max}$ = maximum RBT threshold (10,000 RBT)
+- $B_{\max}$ = maximum bonus discount (2.5%)
 
 <Card title="Lock RBT" icon="lock" href="https://app.blackhaven.io/notes">
   Create an RBT Note position
