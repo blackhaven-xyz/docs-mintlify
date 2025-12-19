@@ -111,12 +111,12 @@
     "suggestEdit": true
   },
   "seo": {
-    "indexHiddenPages": false
-  },
-  "metadata": {
-    "og:site_name": "Blackhaven Documentation",
-    "og:description": "The reserve-backed liquidity engine powering sustainable rewards and treasury growth across the MegaETH ecosystem.",
-    "og:image": "/images/banner.webp",
-    "twitter:site": "@blackhaven"
+    "indexHiddenPages": false,
+    "metatags": {
+      "og:site_name": "Blackhaven Documentation",
+      "og:description": "The reserve-backed liquidity engine powering sustainable rewards and treasury growth across the MegaETH ecosystem.",
+      "og:image": "https://docs.blackhaven.xyz/images/banner.webp",
+      "twitter:site": "@blackhaven"
+    }
   }
 }
