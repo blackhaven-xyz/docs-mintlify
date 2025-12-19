@@ -4,7 +4,7 @@ title: 'Backing Arbitrage Module (BAM)'
 
 The Backing Arbitrage Module is a two-way arbitrage mechanism that captures value when RBT deviates from its Net Asset Value (NAV), converting market volatility into permanent treasury growth. When RBT trades above NAV, existing RBT is sold into the premium and proceeds go directly to the treasury. It's arbitrage for the benefit of every RBT holder.
 
-## How It Works
+### How It Works
 
 - **Monitor** — Contract monitors RBT market price against NAV
 - **Premium Capture** — If above NAV: Sell RBT for USDM, add USDM to backing
@@ -21,6 +21,7 @@ When RBT trades **above NAV**, the protocol sells existing RBT into the premium.
 When RBT trades **below NAV**, the protocol uses treasury USDM to buy RBT from the market and burn it. This reduces circulating supply and pushes price back toward NAV.
 
 {' '}
+
 <Info>
   Over time, every premium gets partially captured. Every capture adds backing.
   **The floor rises with each cycle.**
