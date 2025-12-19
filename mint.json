@@ -65,7 +65,16 @@
       "group": "Products",
       "pages": [
         "products/fixed-term-bonds",
-        "products/blackhaven-dex",
+        {
+          "group": "Blackhaven DEX",
+          "pages": [
+            "products/blackhaven-dex",
+            "products/dex/swap",
+            "products/dex/liquidity-provision",
+            "products/dex/liquidity-bonds",
+            "products/dex/dca"
+          ]
+        },
 
         "products/haven-protected-notes",
         "treasury/bam"
