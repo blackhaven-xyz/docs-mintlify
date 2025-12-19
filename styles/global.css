@@ -197,6 +197,7 @@ h3,
 h4 {
   color: var(--bh-text) !important;
   letter-spacing: -0.025em !important;
+  border-bottom: none !important;
 }
 
 h1::after {
@@ -209,8 +210,13 @@ h1::after {
   margin-top: 12px;
 }
 
-h2 {
-  border-bottom: 1px solid var(--bh-border) !important;
+/* Remove borders from page header area */
+#header,
+#header *,
+header#header,
+header#header * {
+  border-bottom: none !important;
+  border: none !important;
 }
 
 /* ===== TABLES ===== */
