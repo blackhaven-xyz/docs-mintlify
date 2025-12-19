@@ -12,19 +12,11 @@ The Backing Arbitrage Module (BAM) is a two-way arbitrage mechanism that capture
 
 ## How It Works
 
-<Steps>
-  <Step title="Monitor">Contract monitors RBT market price against NAV</Step>
-  <Step title="Premium Capture">
-    If above NAV: Sell RBT for USDM, add USDM to backing
-  </Step>
-  <Step title="Discount Capture">
-    If below NAV: Buy RBT with USDM, burn the RBT
-  </Step>
-  <Step title="Scale">Capture rate scales with deviation from NAV</Step>
-  <Step title="Cooldown">
-    Cooldown between operations prevents gaming and smooths market impact
-  </Step>
-</Steps>
+- **Monitor** — Contract monitors RBT market price against NAV
+- **Premium Capture** — If above NAV: Sell RBT for USDM, add USDM to backing
+- **Discount Capture** — If below NAV: Buy RBT with USDM, burn the RBT
+- **Scale** — Capture rate scales with deviation from NAV
+- **Cooldown** — Cooldown between operations prevents gaming and smooths market impact
 
 ## Premium Capture (RBT > NAV)
 
