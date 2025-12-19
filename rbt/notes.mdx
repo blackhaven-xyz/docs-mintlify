@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: 'Overview'
 ---
 
 RBT Notes are fixed-term lockup instruments issued as ERC-721 NFTs that let holders earn guaranteed yield by committing their RBT for a set period. Unlike liquid staking where rewards vary and capital can leave at any time, Notes offer a simple proposition: lock now, know your exact return, collect at maturity.
@@ -22,10 +22,9 @@ You can redeem before maturity, but it comes with two costs:
 The penalty decreases proportionally with time held. Exit at the start of your term and pay the full 10%. Exit halfway through and pay 5%. Exit near maturity and pay close to nothing.
 
 <Tip>
-Penalties flow back into the contract, funding future yields for holders who complete their terms.
+  Penalties flow back into the contract, funding future yields for holders who
+  complete their terms.
 </Tip>
-
-
 
 ## Yield Curve
 
@@ -35,15 +34,17 @@ $$
 \text{Yield}(t) = r_{\text{base}} \times \frac{t}{t_{\max}} + r_{\text{bonus}} \times \left(\frac{t}{t_{\max}}\right)^{2}
 $$
 
-| Parameter | Value |
-|-----------|-------|
-| t | Term length in weeks |
-| t_max | 52 weeks |
-| r_base | 19% |
-| r_bonus | 33% |
+| Parameter          | Value                |
+| ------------------ | -------------------- |
+| $t$                | Term length in weeks |
+| $t_{\max}$         | 52 weeks             |
+| $r_{\text{base}}$  | 19%                  |
+| $r_{\text{bonus}}$ | 33%                  |
 
 <Note>
-**Rewards Pool:** RBT Notes yield is funded by a capped rewards pool. When the pool is fully allocated, new Note deposits close until the pool refills. Deposits reopen as rewards flow back into the pool. First come, first serve.
+  **Rewards Pool:** RBT Notes yield is funded by a capped rewards pool. When the
+  pool is fully allocated, new Note deposits close until the pool refills.
+  Deposits reopen as rewards flow back into the pool. First come, first serve.
 </Note>
 
 **Rewards inflows:**
@@ -52,4 +53,3 @@ $$
 - Forfeited yield (early exit from RBT Notes)
 - Principal penalty (early exit from RBT Notes)
 - Forfeited unvested RBT (early redemption from bonds)
-
