@@ -479,7 +479,6 @@ figure:hover {
     rgba(6, 18, 53, 0.5) 100%
   );
   border: 1px solid rgba(212, 255, 175, 0.25);
-  border-left: 3px solid var(--bh-accent);
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
   margin: 1rem 0 1.5rem 0;
