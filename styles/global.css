@@ -51,6 +51,16 @@ html {
   display: none !important;
 }
 
+/* Keep sidebar socials visible */
+#sidebar a[href*='x.com'],
+#sidebar a[href*='discord'],
+nav a[href*='x.com'],
+nav a[href*='discord'],
+aside a[href*='x.com'],
+aside a[href*='discord'] {
+  display: flex !important;
+}
+
 /* ===== GLOBAL STYLES ===== */
 body {
   background-color: var(--bh-bg) !important;
