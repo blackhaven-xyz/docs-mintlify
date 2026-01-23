@@ -45,6 +45,12 @@ html {
   color-scheme: dark !important;
 }
 
+/* ===== HIDE FOOTER SOCIALS ===== */
+footer a[href*='x.com'],
+footer a[href*='discord'] {
+  display: none !important;
+}
+
 /* ===== GLOBAL STYLES ===== */
 body {
   background-color: var(--bh-bg) !important;
