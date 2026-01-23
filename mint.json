@@ -65,7 +65,6 @@
       "group": "Products",
       "pages": [
         "products/fixed-term-bonds",
-        "products/haven-protected-notes",
         "treasury/bam"
       ]
     },
