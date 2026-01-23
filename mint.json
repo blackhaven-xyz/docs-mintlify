@@ -70,16 +70,6 @@
       ]
     },
     {
-      "group": "Spot trading",
-      "pages": [
-        "spot-trading/overview",
-        "spot-trading/swap",
-        "spot-trading/liquidity-provision",
-        "spot-trading/liquidity-bonds",
-        "spot-trading/dca"
-      ]
-    },
-    {
       "group": "HVN Token",
       "pages": ["hvn/governance", "hvn/staking", "hvn/proximity"]
     },
