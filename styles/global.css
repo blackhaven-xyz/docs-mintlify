@@ -46,8 +46,8 @@ html {
 }
 
 /* ===== HIDE FOOTER SOCIALS ===== */
-footer a[href*='x.com'],
-footer a[href*='discord'] {
+a[href*='x.com']:not(nav a):not(aside a),
+a[href*='discord']:not(nav a):not(aside a) {
   display: none !important;
 }
 
