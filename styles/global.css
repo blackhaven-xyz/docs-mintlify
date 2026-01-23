@@ -46,18 +46,9 @@ html {
 }
 
 /* ===== HIDE FOOTER SOCIALS ===== */
-/* Hide all social links */
-a[href*='x.com'],
-a[href*='discord'] {
+#footer a[href*='x.com'],
+#footer a[href*='discord'] {
   display: none !important;
-}
-
-/* Show only sidebar social links */
-nav a[href*='x.com'],
-nav a[href*='discord'],
-aside a[href*='x.com'],
-aside a[href*='discord'] {
-  display: flex !important;
 }
 
 /* ===== GLOBAL STYLES ===== */
