@@ -3,7 +3,7 @@
   "name": "Blackhaven",
   "logo": {
     "dark": "/logo/Darkmode.png",
-    "light": "/logo/Lightmode.png"
+    "light": "/logo/Darkmode.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
