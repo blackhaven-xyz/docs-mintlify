@@ -2,7 +2,7 @@
   Blackhaven Documentation - Dark Mode Only (Simplified)
   Colors: 
     - Haven Night (#061235)
-    - Ozone (#D4FFAF) - Primary Accent
+    - Ozone (297FE1) - Primary Accent
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -33,7 +33,7 @@ div[class*='Footer'] a[href*='mintlify'],
   --bh-text: #f3f4f6;
   --bh-text-muted: #9ca3af;
   --bh-border: #1f2937;
-  --bh-accent: #d4ffaf;
+  --bh-accent: 297FE1;
   --bh-accent-glow: rgba(212, 255, 175, 0.2);
   --bh-accent-soft: rgba(212, 255, 175, 0.08);
   --bh-card-bg: #11141d;
@@ -58,15 +58,15 @@ body {
 .dark,
 html.dark,
 [data-theme='dark'] {
-  --primary: #d4ffaf !important;
-  --primary-light: #d4ffaf !important;
-  --primary-dark: #d4ffaf !important;
+  --primary: 297FE1 !important;
+  --primary-light: 297FE1 !important;
+  --primary-dark: 297FE1 !important;
 }
 
 /* Override all text-primary to green */
 .text-primary,
 [class*='text-primary'] {
-  color: #d4ffaf !important;
+  color: 297FE1 !important;
 }
 
 /* ===== SIDEBAR STYLING ===== */
@@ -114,7 +114,7 @@ aside a[class*="text-primary"],
 /* Broad selector for Mintlify's active links - excludes social and launch button */
 a.text-primary:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]),
 a[class*="text-primary"]:not([href*="x.com"]):not([href*="discord"]):not([href*="blackhaven.io"]) {
-  color: #d4ffaf !important;
+  color: 297FE1 !important;
   background-color: rgba(212, 255, 175, 0.12) !important;
   border-left: none !important;
   font-weight: 600 !important;
@@ -133,7 +133,7 @@ article [class*='text-primary'],
 [class*='Content'] a.text-primary,
 [class*='PageContent'] .text-primary,
 [class*='Article'] .text-primary {
-  color: #d4ffaf !important;
+  color: 297FE1 !important;
   background-color: transparent !important;
   background: none !important;
   border-left: none !important;
@@ -144,8 +144,8 @@ article [class*='text-primary'],
 /* ===== LAUNCH APP BUTTON ===== */
 a[href*='blackhaven.io'],
 header a[href*='blackhaven.io'] {
-  background: #d4ffaf !important;
-  background-color: #d4ffaf !important;
+  background: 297FE1 !important;
+  background-color: 297FE1 !important;
   color: #000000 !important;
   border: none !important;
   outline: none !important;
@@ -263,7 +263,7 @@ a[class*='Card'],
 [class*='Card']:hover,
 a[class*='Card']:hover,
 [class*='CardGroup'] a:hover {
-  border-color: #d4ffaf !important;
+  border-color: 297FE1 !important;
   box-shadow: 0 10px 30px -10px rgba(212, 255, 175, 0.4) !important;
   transform: translateY(-2px);
 }
@@ -373,8 +373,8 @@ a[href*='discord'] svg *,
 a[href*='discord'] svg path,
 a[href*='discord'] div,
 a[href*='discord'] > * {
-  color: #d4ffaf !important;
-  fill: #d4ffaf !important;
+  color: 297FE1 !important;
+  fill: 297FE1 !important;
   filter: none !important;
   transition: all 0.2s ease !important;
   pointer-events: none !important;
