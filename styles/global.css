@@ -380,15 +380,15 @@ a[href*='discord'] > * {
   pointer-events: none !important;
 }
 
-/* On hover: icon turns Haven Night blue for contrast against green bg */
+/* On hover: icon turns white */
 a[href*='x.com']:hover svg,
 a[href*='x.com']:hover svg *,
 a[href*='x.com']:hover svg path,
 a[href*='discord']:hover svg,
 a[href*='discord']:hover svg *,
 a[href*='discord']:hover svg path {
-  color: #297FE1 !important;
-  fill: #297FE1 !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
   filter: none !important;
 }
 
