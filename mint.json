@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Blackhaven",
   "logo": {
-    "dark": "/logo/DARKMODE.png",
-    "light": "/logo/Darkmode.png"
+    "dark": "/logo/Darkmode.png",
+    "light": "/logo/Lightmode.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
