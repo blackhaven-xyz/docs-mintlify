@@ -46,9 +46,18 @@ html {
 }
 
 /* ===== HIDE FOOTER SOCIALS ===== */
-a[href*='x.com']:not(nav a):not(aside a),
-a[href*='discord']:not(nav a):not(aside a) {
+/* Hide all social links */
+a[href*='x.com'],
+a[href*='discord'] {
   display: none !important;
+}
+
+/* Show only sidebar social links */
+nav a[href*='x.com'],
+nav a[href*='discord'],
+aside a[href*='x.com'],
+aside a[href*='discord'] {
+  display: flex !important;
 }
 
 /* ===== GLOBAL STYLES ===== */
