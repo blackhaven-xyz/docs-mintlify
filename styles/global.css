@@ -357,8 +357,8 @@ a[href*='x.com'],
 a[href*='x.com']:hover,
 a[href*='discord'],
 a[href*='discord']:hover {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 /* Make X and Discord icons Ozone green to match theme */
