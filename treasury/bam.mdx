@@ -7,18 +7,18 @@ The Backing Arbitrage Module is a two-way arbitrage mechanism that captures valu
 ### How It Works
 
 - **Monitor** — Contract monitors RBT market price against NAV
-- **Premium Capture** — If above NAV: Sell RBT for USDM, add USDM to backing
-- **Discount Capture** — If below NAV: Buy RBT with USDM, burn the RBT
+- **Premium Capture** — If above NAV: Sell RBT for USDm, add USDm to backing
+- **Discount Capture** — If below NAV: Buy RBT with USDm, burn the RBT
 - **Scale** — Capture rate scales with deviation from NAV
 - **Cooldown** — Cooldown between operations prevents gaming and smooths market impact
 
 ## Premium Capture (RBT > NAV)
 
-When RBT trades **above NAV**, the protocol sells existing RBT into the premium. USDM proceeds go directly to treasury backing.
+When RBT trades **above NAV**, the protocol sells existing RBT into the premium. USDm proceeds go directly to treasury backing.
 
 ## Discount Capture (RBT < NAV)
 
-When RBT trades **below NAV**, the protocol uses treasury USDM to buy RBT from the market and burn it. This reduces circulating supply and pushes price back toward NAV.
+When RBT trades **below NAV**, the protocol uses treasury USDm to buy RBT from the market and burn it. This reduces circulating supply and pushes price back toward NAV.
 
 {' '}
 
