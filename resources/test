@@ -1,0 +1,44 @@
+---
+title: "Risks"
+---
+
+<Info>
+All community feedback is welcome. If you believe any risk has not been adequately surfaced, please reach out to our contributors.
+</Info>
+
+### Smart Contract Risk
+
+Like all DeFi protocols, Blackhaven is built on smart contracts. While these contracts are designed to be robust and secure, there is always a risk of vulnerabilities, bugs, or exploits that could result in a partial or total loss of user funds.
+
+**Mitigation:**
+
+- **Audits:** The entire codebase will undergo multiple audits from independent security firms before launch. All audit reports will be made public.
+- **Bug Bounty Program:** A bug bounty program incentivizes security researchers to find and report vulnerabilities responsibly.
+- **Time-Locked Contracts:** Key administrative functions and contract upgrades are subject to a time-lock, giving users a window to exit if they disagree with a proposed change.
+
+### RBT Backing Risk
+
+RBT is a reserve-backed token. While the protocol ensures RBT is always backed at least 1:1 with approved assets, market dynamics could cause the trading price to fall below backing value temporarily.
+
+**Mitigation:**
+
+- **Verifiable On-Chain Reserves:** The treasury is fully transparent and verifiable on-chain. Users can always see the exact assets backing RBT.
+- **Protocol-Owned Liquidity (POL):** Through bonding, Blackhaven builds deep, permanent liquidity for the RBT-USDM pool, absorbing sell pressure and stabilizing price.
+- **Backing Arbitrage Module (BAM):** When RBT trades below backing, the treasury buys RBT from the market and burns it, providing natural buy pressure.
+
+### Treasury Strategy Risk
+
+Yield for HPN depositors comes from deploying treasury capital into whitelisted DeFi strategies on MegaETH. These strategies carry smart contract risk of the underlying protocols and potential underperformance in extreme market conditions.
+
+**Mitigation:**
+
+- **Conservative Whitelisting:** Only established, audited protocols are whitelisted. The bar for inclusion is high.
+- **Diversification:** The treasury diversifies across multiple strategies to avoid over-exposure to any single point of failure.
+
+### Oracle Risk
+
+The protocol may rely on oracles for pricing data. If oracles are manipulated or provide inaccurate data, it could lead to incorrect calculations of RBT backing.
+
+**Mitigation:**
+
+- **Multiple Oracle Providers:** For critical functions, the protocol uses multiple oracle providers as redundancy.
