@@ -78,7 +78,7 @@
     },
     {
       "group": "Resources",
-            "pages": ["resources/risks", "resources/tos"]
+            "pages": ["resources/risks", "resources/tos", "resources/audit"]
     }
   ],
 
