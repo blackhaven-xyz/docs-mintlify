@@ -2,27 +2,20 @@
 title: 'Backing Arbitrage Module (BAM)'
 ---
 
-The Backing Arbitrage Module is a two-way arbitrage mechanism that captures value when RBT deviates from its Net Asset Value (NAV), converting market volatility into permanent treasury growth. When RBT trades above NAV, existing RBT is sold into the premium and proceeds go directly to the treasury. It's arbitrage for the benefit of every RBT holder.
+The Backing Arbitrage Module (BAM) is a two-way arbitrage mechanism triggered when RBT's market price deviates from its Net Asset Value (NAV). When RBT trades above NAV, existing RBT is sold into the premium and proceeds route to the treasury. When RBT trades below NAV, treasury USDm is used to buy and burn RBT.
 
 ### How It Works
 
 - **Monitor** — Contract monitors RBT market price against NAV
-- **Premium Capture** — If above NAV: Sell RBT for USDm, add USDm to backing
-- **Discount Capture** — If below NAV: Buy RBT with USDm, burn the RBT
-- **Scale** — Capture rate scales with deviation from NAV
+- **Above NAV** — Sell RBT for USDm, route USDm to reserves
+- **Below NAV** — Buy RBT with USDm, burn the RBT
+- **Scale** — Operation size scales with deviation from NAV
 - **Cooldown** — Cooldown between operations prevents gaming and smooths market impact
 
-## Premium Capture (RBT > NAV)
+## Above NAV (RBT > NAV)
 
-When RBT trades **above NAV**, the protocol sells existing RBT into the premium. USDm proceeds go directly to treasury backing.
+When RBT trades above NAV, the protocol sells existing RBT into the market. USDm proceeds route to the treasury.
 
-## Discount Capture (RBT < NAV)
+## Below NAV (RBT < NAV)
 
-When RBT trades **below NAV**, the protocol uses treasury USDm to buy RBT from the market and burn it. This reduces circulating supply and pushes price back toward NAV.
-
-{' '}
-
-<Info>
-  Over time, every premium gets partially captured. Every capture adds backing.
-  **The floor rises with each cycle.**
-</Info>
+When RBT trades below NAV, the protocol uses treasury USDm to buy RBT from the market and burn it.
