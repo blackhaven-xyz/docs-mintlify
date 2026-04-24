@@ -2,35 +2,32 @@
 title: 'Fixed-Term Bonds'
 ---
 
-Fixed-Term Bonds allow users to exchange USDm for discounted RBT that vests over a chosen term. Unlike traditional bonding models where users either deposit single assets or provide LP tokens directly, Blackhaven handles liquidity formation automatically.
+Fixed-Term Bonds allow users to exchange USDm for discounted RBT that vests over a chosen term. Unlike traditional bonding models where users either commit single assets or provide LP tokens directly, Blackhaven handles liquidity formation automatically.
 
-When a user bonds, the deposit is split. Half goes to the reserve treasury to back RBT. The other half goes to the Liquidity Manager, which pairs it with newly minted RBT to form a permanent Uniswap V3 position. Every bond strengthens backing and deepens liquidity.
+When a user bonds, the committed USDm is split. Half goes to the reserve treasury to back RBT. The other half goes to the Liquidity Manager, which pairs it with newly minted RBT to form a permanent Uniswap V3 position. Every bond strengthens backing and deepens liquidity.
 
-The Liquidity Manager holds these Uni V3 position NFTs permanently. Trading fees accumulate in the positions and flow to the treasury. As the protocol acquires more assets, they can be deposited into existing positions to deepen liquidity over time. This creates a self-reinforcing system: bonds grow reserves, reserves enable more liquidity, liquidity generates fees, fees strengthen the treasury.
+The Liquidity Manager holds these Uni V3 position NFTs permanently. Trading fees accumulate in the positions and flow to the treasury. As the protocol acquires more assets, they can be added to existing positions to deepen liquidity over time. This creates a self-reinforcing system: bonds grow reserves, reserves enable more liquidity, liquidity generates fees, fees strengthen the treasury.
 
 **Quick Steps:**
 
 1. Select a bond term and discount
-2. Deposit USDm
-3. Liquidity Manager splits deposit between reserves and Protocol-Owned Liquidity (POL)
+2. Commit USDm to the bond contract
+3. Liquidity Manager splits the contribution between reserves and Protocol-Owned Liquidity (POL)
 4. RBT vests linearly over the term
 5. Claim fully vested RBT at maturity
 
 <Info>
-  Deposits earn ecosystem rewards, claimable when released by MegaETH.
+  Bond participation qualifies for ecosystem incentives, distributed when released by MegaETH.
 </Info>
 
 ### Bond Structure and Vesting
 
 Blackhaven bonds are fixed-term instruments that vest linearly over a user-selected period.
 
-- **Hold to Maturity:** At the end of the vesting period, users claim their fully vested RBT. Ecosystem rewards earned are claimable when released.
+- **Hold to Full Vest:** At the end of the vesting period, users claim their fully vested RBT. Ecosystem incentives are claimable when released.
 
-- **Early Redemption:** Exit early and receive vested RBT minus a small fee. Unvested RBT and ecosystem rewards are forfeited to the treasury. Forfeited RBT flows to the treasury, where the BAM can sell it for USDm to increase backing.
+- **Early Exit:** Exit early and receive vested RBT minus a small fee. Unvested RBT and ecosystem incentives are forfeited to the treasury. Forfeited RBT flows to the treasury, where BAM can sell it for USDm to increase backing.
 
 <Info>
-  **Protocol-Owned Liquidity (POL):** Inspired by OlympusDAO's pioneering model,
-  POL ensures liquidity without relying on liquidity mining incentives.
-  Blackhaven adopts this model through LP bonds, building treasury-owned
-  liquidity that provides deep, permanent market depth for RBT.
+  **Protocol-Owned Liquidity (POL):** Inspired by OlympusDAO's model, POL ensures liquidity without relying on liquidity mining incentives. Blackhaven adopts this model through bonds, building treasury-owned liquidity that provides deep, permanent market depth for RBT.
 </Info>
