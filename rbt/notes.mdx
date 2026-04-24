@@ -2,54 +2,40 @@
 title: 'Overview'
 ---
 
-RBT Notes are fixed-term lockup instruments issued as ERC-721 NFTs that let holders earn yield (denominated in RBT) by committing their RBT for a set period. Unlike liquid staking where rewards vary and capital can leave at any time, Notes offer a simple proposition: lock now, know your exact return, collect at maturity.
+RBT Notes are fixed-term commitment instruments issued as ERC-721 NFTs. Holders commit their RBT for a set period, and at the end of the period the committed RBT is returned along with additional RBT minted by the protocol.
 
 **Quick Steps:**
 
-1. Choose your term
-2. Deposit RBT into the contract
+1. Choose your commitment period
+2. Commit RBT into the contract
 3. Receive an NFT representing your position
-4. Your yield is calculated and locked in from day one
-5. At maturity, burn the NFT and claim principal plus yield
+4. Your distribution amount is determined at the time of commitment
+5. At the end of the commitment period, burn the NFT and receive your committed RBT plus the additional RBT
 
 ### Early Exit
 
-You can redeem before maturity, but it comes with two costs:
+Positions can be exited before the commitment period ends, with two consequences:
 
-1. **Forfeited yield:** You receive zero yield regardless of how long you held
-2. **Principal penalty:** Up to 10% of your deposit, scaling linearly with time remaining
+1. **Forfeited distribution:** The additional RBT that would have been issued at the end of the period is not minted
+2. **Early exit fee:** Up to 10% of your committed RBT, scaling linearly with time remaining
 
-The penalty decreases proportionally with time held. Exit at the start of your term and pay the full 10%. Exit halfway through and pay 5%. Exit near maturity and pay close to nothing.
+The fee decreases proportionally with time committed. Exit at the start of your period and the full 10% applies. Exit halfway through and 5% applies. Exit near the end and the fee approaches zero.
 
 <Info>
-  Penalties flow back into the contract, funding future yields for holders who
-  complete their terms.
+ Early exit fees return to the protocol, supporting the sustainability of the Notes program.
 </Info>
 
-### Yield Curve
+### Distribution Curve
 
-Yield scales with term length, combining a base yield with a bonus that accelerates for longer commitments:
-
-$$
-\text{Yield}(t) = r_{\text{base}} \times \frac{t}{t_{\max}} + r_{\text{bonus}} \times \left(\frac{t}{t_{\max}}\right)^{2}
-$$
-
-| Parameter          | Value                |
-| ------------------ | -------------------- |
-| $t$                | Term length in weeks |
-| $t_{\max}$         | 52 weeks             |
-| $r_{\text{base}}$  | 19%                  |
-| $r_{\text{bonus}}$ | 33%                  |
+The distribution amount scales with commitment length. Longer commitments receive proportionally larger distributions to reflect the value of capital stability to the protocol. Specific curve parameters are set by foundation governance and implemented on-chain.
 
 <Info>
-  **Rewards Pool:** RBT Notes yield is funded by a capped rewards pool. When the
-  pool is fully allocated, new Note deposits close until the pool refills.
-  Deposits reopen as rewards flow back into the pool. First come, first serve.
+  **Distribution Cap:** RBT distributions through Notes are subject to a minting cap set by protocol governance. When the cap is reached, new Notes pause until additional minting capacity becomes available. Participation is first come, first serve.
 </Info>
 
 **Rewards inflows:**
 
-- Excess mints from bonds
-- Forfeited yield (early exit from RBT Notes)
-- Principal penalty (early exit from RBT Notes)
-- Forfeited unvested RBT (early redemption from bonds)
+- Additional minting authority granted by governance
+- Forfeited distributions from early exits
+- Early exit fees returning to protocol
+- Forfeited unvested RBT from early bond redemptions
