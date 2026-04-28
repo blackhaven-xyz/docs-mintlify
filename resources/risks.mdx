@@ -23,12 +23,12 @@ RBT is a reserve-backed token. While the protocol ensures RBT is always backed a
 **Mitigation:**
 
 - **Verifiable On-Chain Reserves:** The treasury is fully transparent and verifiable on-chain. Users can always see the exact assets backing RBT.
-- **Protocol-Owned Liquidity (POL):** Through bonding, Blackhaven builds deep, permanent liquidity for the RBT-USDM pool, absorbing sell pressure and stabilizing price.
-- **Backing Arbitrage Module (BAM):** When RBT trades below backing, the treasury buys RBT from the market and burns it, providing natural buy pressure.
+- **Protocol-Owned Liquidity (POL):** Through bonding, Blackhaven builds permanent liquidity positions in the RBT-USDM pool.
+- **Backing Arbitrage Module (BAM):** When RBT trades below NAV, the treasury buys and burns RBT per the BAM's on-chain rules.
 
 ### Treasury Strategy Risk
 
-Yield for HPN depositors comes from deploying treasury capital into whitelisted DeFi strategies on MegaETH. These strategies carry smart contract risk of the underlying protocols and potential underperformance in extreme market conditions.
+YNote depositors receive variable, non-guaranteed returns from treasury capital deployed into whitelisted DeFi strategies on MegaETH. These strategies carry smart contract risk of the underlying protocols and potential underperformance in extreme market conditions.
 
 **Mitigation:**
 
