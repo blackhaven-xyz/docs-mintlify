@@ -8,15 +8,15 @@ The Treasury holds all reserve assets owned by Blackhaven. Its primary role is t
 
 | Source               | Description                                                          |
 | -------------------- | -------------------------------------------------------------------- |
-| **User Deposits**    | Reserve assets from Fixed-Term Bonds and HPN redemptions against RBT |
+| **User Deposits**    | Reserve assets from Fixed-Term Bonds |
 | **Strategy Returns**  | Variable, non-guaranteed returns from allocation to whitelisted MegaETH DeFi strategies |
-| **Ecosystem Points**  |MegaETH ecosystem points from qualifying activities |
-| **User Forfeitures** | Early exit fees, forfeited yield, and forfeited Mega Points          |
-| **BAM**              | Captures value when RBT trades above or below backing                |
+| **Ecosystem Points**  |MegaETH ecosystem points |
+| **User Forfeitures** | Early exit fees, forfeited distributions, and forfeited ecosystem points    |
+| **BAM**              | Executes two-way arbitrage when RBT trades above or below NAV |
 
 ### Amplifying RBT Backing
 
-Treasury inflows route to the reserve base for RBT. Forfeited outputs, strategy returns, fees, and BAM above-NAV operations add to reserves while circulating supply is unchanged. BAM below-NAV operations reduce supply through burns.
+Treasury inflows route to the reserve base for RBT. Forfeited distributions, strategy returns, fees, and BAM above-NAV operations add to reserves while circulating supply is unchanged. BAM below-NAV operations reduce supply through burns.
 
 <Info>
   Both mechanisms are mechanical responses to on-chain NAV conditions. The relationship between treasury value and circulating RBT supply is transparent on-chain.
