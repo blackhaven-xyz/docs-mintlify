@@ -69,10 +69,6 @@
       ]
     },
     {
-      "group": "HVN Token",
-    "pages": ["hvn/governance", "hvn/staking", "hvn/proximity", "hvn/baseline"]
-    },
-    {
       "group": "Treasury",
       "pages": ["treasury/overview", "treasury/fees"]
     },
