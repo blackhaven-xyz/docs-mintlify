@@ -56,7 +56,7 @@
       "pages": [
         "rbt/overview",
         {
-          "group": "RBT Notes",
+          "group": "RBT Locks",
           "pages": ["rbt/notes", "rbt/enhanced-bond-discounts"]
         }
       ]
