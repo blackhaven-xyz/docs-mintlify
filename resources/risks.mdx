@@ -26,15 +26,6 @@ RBT is a reserve-backed token. While the protocol ensures RBT is always backed a
 - **Protocol-Owned Liquidity (POL):** Through bonding, Blackhaven builds permanent liquidity positions in the RBT-USDM pool.
 - **Backing Arbitrage Module (BAM):** When RBT trades below NAV, the treasury buys and burns RBT per the BAM's on-chain rules.
 
-### Treasury Strategy Risk
-
-YNote depositors receive variable, non-guaranteed returns from treasury capital deployed into whitelisted DeFi strategies on MegaETH. These strategies carry smart contract risk of the underlying protocols and potential underperformance in extreme market conditions.
-
-**Mitigation:**
-
-- **Conservative Whitelisting:** Only established, audited protocols are whitelisted. The bar for inclusion is high.
-- **Diversification:** The treasury diversifies across multiple strategies to avoid over-exposure to any single point of failure.
-
 ### Oracle Risk
 
 The protocol may rely on oracles for pricing data. If oracles are manipulated or provide inaccurate data, it could lead to incorrect calculations of RBT backing.
