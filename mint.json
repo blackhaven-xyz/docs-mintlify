@@ -57,7 +57,7 @@
         "rbt/overview",
         {
           "group": "RBT Locks",
-          "pages": ["rbt/locks", "rbt/enhanced-bond-discounts"]
+          "pages": ["rbt/locks", "rbt/additional-bond-discounts"]
         }
       ]
     },
