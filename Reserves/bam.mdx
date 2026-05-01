@@ -2,7 +2,7 @@
 title: 'Backing Arbitrage Module (BAM)'
 ---
 
-The Backing Arbitrage Module (BAM) is a two-way arbitrage mechanism triggered when RBT's market price deviates from its Net Asset Value (NAV). When RBT trades above NAV, existing RBT is sold into the market and proceeds route to the treasury. When RBT trades below NAV, treasury USDm is used to buy and burn RBT.
+The Backing Arbitrage Module (BAM) is a two-way arbitrage mechanism triggered when RBT's market price deviates from its Net Asset Value (NAV). When RBT trades above NAV, existing RBT is sold into the market and proceeds route to the reserves. When RBT trades below NAV, USDm in reserves is used to buy and burn RBT.
 
 ### How It Works
 
@@ -14,8 +14,8 @@ The Backing Arbitrage Module (BAM) is a two-way arbitrage mechanism triggered wh
 
 ## Above NAV (RBT > NAV)
 
-When RBT trades above NAV, the protocol sells existing RBT into the market. USDm proceeds route to the treasury.
+When RBT trades above NAV, the protocol sells existing RBT into the market. USDm proceeds route to the reserves.
 
 ## Below NAV (RBT < NAV)
 
-When RBT trades below NAV, the protocol uses treasury USDm to buy RBT from the market and burn it.
+When RBT trades below NAV, the protocol uses USDm in reserves to buy RBT from the market and burn it.
