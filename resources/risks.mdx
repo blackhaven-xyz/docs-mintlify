@@ -12,25 +12,25 @@ Like all DeFi protocols, Blackhaven is built on smart contracts. While these con
 
 **Mitigation:**
 
-- **Audits:** The entire codebase will undergo multiple audits from independent security firms before launch. All audit reports will be made public.
+- **Audits:** The codebase will undergo multiple audits from independent security firms before launch. All audit reports will be made public.
 - **Bug Bounty Program:** A bug bounty program incentivizes security researchers to find and report vulnerabilities responsibly.
 - **Time-Locked Contracts:** Key administrative functions and contract upgrades are subject to a time-lock, giving users a window to exit if they disagree with a proposed change.
 
 ### RBT Backing Risk
 
-RBT is a reserve-backed token. While the protocol ensures RBT is always backed at least 1:1 with approved assets, market dynamics could cause the trading price to fall below backing value temporarily.
+RBT is a reserve-backed token. A portion of each bond deposit is retained as protocol revenue, so RBT is not issued at a strict 1:1 ratio against deposited assets. Backing levels and market dynamics can cause the trading price and backing ratio to deviate accordingly.
 
 **Mitigation:**
 
 - **Verifiable On-Chain Reserves:** The treasury is fully transparent and verifiable on-chain. Users can always see the exact assets backing RBT.
 - **Protocol-Owned Liquidity (POL):** Through bonding, Blackhaven builds permanent liquidity positions in the RBT-USDM pool.
-- **Backing Arbitrage Module (BAM):** When RBT trades below NAV, the treasury buys and burns RBT per the BAM's on-chain rules.
+- **Backing Arbitrage Module (BAM):** When RBT trades below NAV, the reserves buy and burn RBT per the BAM's on-chain rules.
 
 ### Oracle Risk
 
-The protocol may rely on oracles for pricing data. If oracles are manipulated or provide inaccurate data, it could lead to incorrect calculations of RBT backing.
+The protocol aims to use oracles for pricing data. If oracles are manipulated or provide inaccurate data, it could lead to incorrect calculations of RBT backing.
 
 **Mitigation:**
 
-- **Multiple Oracle Providers:** For critical functions, the protocol uses multiple oracle providers as redundancy.
+- **Multiple Oracle Providers:** For critical functions, the protocol aims to use multiple oracle providers as redundancy.
 
