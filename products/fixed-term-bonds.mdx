@@ -4,7 +4,7 @@ title: 'Fixed-Term Bonds'
 
 Fixed-Term Bonds allow users to commit USDm and receive RBT released linearly over a chosen term. Unlike traditional bonding models where users either commit single assets or provide LP tokens directly, Blackhaven handles liquidity formation at the contract level.
 
-When a user bonds, the committed USDm is split. Half goes to the reserve treasury. The other half goes to the Liquidity Manager, which pairs it with newly minted RBT to form a permanent Uniswap V3 position. Each bond allocates capital to both reserves and permanent liquidity.
+When a user bonds, the committed USDm is split. 90% flows directly to backing, strengthening the reserves that secure RBT. The remaining 10% goes to protocol reserves. Each bond sends the overwhelming majority of capital into hard backing, reinforcing the protocol’s collateral position with every deposit.
 
 The Liquidity Manager holds these Uni V3 position NFTs permanently. Trading fees accumulate in the positions and route to the treasury. As the protocol acquires more assets, they can be added to existing positions to deepen liquidity over time. 
 
