@@ -69,8 +69,8 @@
       ]
     },
     {
-      "group": "Treasury",
-      "pages": ["treasury/overview", "treasury/fees"]
+      "group": "Reserves",
+      "pages": ["reserves/overview", "reserves/fees"]
     },
     {
       "group": "Resources",
