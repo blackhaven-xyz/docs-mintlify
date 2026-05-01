@@ -1,102 +1,102 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Blackhaven",
-  "logo": {
-    "dark": "/logo/DARKMODE.png",
-    "light": "/logo/LIGHTMODE.png"
-  },
-  "favicon": "/favicon.svg",
-  "colors": {
-    "primary": "#297FE1",
-    "light": "#297FE1",
-    "dark": "#297FE1",
-    "background": {
-      "dark": "#0A0C14",
-      "light": "#FFFFFF"
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "Blackhaven",
+    "logo": {
+          "dark": "/logo/DARKMODE.png",
+          "light": "/logo/LIGHTMODE.png"
     },
-    "anchors": {
-      "from": "#297FE1",
-      "to": "#297FE1"
-    }
-  },
-  "font": {
-    "headings": {
-      "family": "Inter",
-      "weight": 700
+    "favicon": "/favicon.svg",
+    "colors": {
+          "primary": "#297FE1",
+          "light": "#297FE1",
+          "dark": "#297FE1",
+          "background": {
+                  "dark": "#0A0C14",
+                  "light": "#FFFFFF"
+          },
+          "anchors": {
+                  "from": "#297FE1",
+                  "to": "#297FE1"
+          }
     },
-    "body": {
-      "family": "Inter",
-      "weight": 400
-    }
-  },
-  "topbarLinks": [],
-  "topbarCtaButton": {
-    "name": "Launch App",
-    "url": "https://blackhaven.xyz/"
-  },
-  "anchors": [
-    {
-      "name": "Twitter",
-      "icon": "x-twitter",
-      "url": "https://x.com/blackhaven"
+    "font": {
+          "headings": {
+                  "family": "Inter",
+                  "weight": 700
+          },
+          "body": {
+                  "family": "Inter",
+                  "weight": 400
+          }
     },
-    {
-      "name": "Discord",
-      "icon": "discord",
-      "url": "https://discord.gg/blackhavenxyz"
-    }
-  ],
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": ["overview"]
+    "topbarLinks": [],
+    "topbarCtaButton": {
+          "name": "Launch App",
+          "url": "https://blackhaven.xyz/"
     },
-    {
-      "group": "Reserve Backed Token",
-      "pages": [
-        "rbt/overview",
-        {
-          "group": "RBT Locks",
-          "pages": ["rbt/locks", "rbt/additional-bond-discounts"]
-        }
-      ]
-    },
-    {
-      "group": "Products",
-      "pages": [
-        "products/fixed-term-bonds",
-        "treasury/bam"
-      ]
-    },
-    {
-      "group": "Reserves",
-      "pages": ["reserves/overview", "reserves/fees"]
-    },
-    {
-      "group": "Resources",
-            "pages": ["resources/risks", "resources/audit", "resources/tos"]
-    }
-  ],
+    "anchors": [
+          {
+                  "name": "Twitter",
+                  "icon": "x-twitter",
+                  "url": "https://x.com/blackhaven"
+          },
+          {
+                  "name": "Discord",
+                  "icon": "discord",
+                  "url": "https://discord.gg/blackhavenxyz"
+          }
+    ],
+    "navigation": [
+          {
+                  "group": "Getting Started",
+                  "pages": ["overview"]
+          },
+          {
+                  "group": "Reserve Backed Token",
+                  "pages": [
+                            "rbt/overview",
+                            {
+                                        "group": "RBT Locks",
+                                        "pages": ["rbt/locks", "rbt/additional-bond-discounts"]
+                            }
+                  ]
+          },
+          {
+                  "group": "Products",
+                  "pages": [
+                            "products/fixed-term-bonds",
+                            "reserves/bam"
+                  ]
+          },
+          {
+                  "group": "Reserves",
+                  "pages": ["reserves/overview", "reserves/fees"]
+          },
+          {
+                  "group": "Resources",
+                  "pages": ["resources/risks", "resources/audit", "resources/tos"]
+          }
+    ],
 
-  "footerSocials": {
-    "x": "https://x.com/blackhaven",
-    "discord": "https://discord.gg/GfTkD6xaGC"
-  },
-  "modeToggle": {
-    "default": "dark",
-    "isHidden": true
-  },
-  "feedback": {
-    "thumbsRating": true,
-    "suggestEdit": true
-  },
-  "seo": {
-    "indexHiddenPages": false,
-    "metatags": {
-      "og:site_name": "Blackhaven Documentation",
-      "og:description": "The reserve-backed liquidity engine powering sustainable rewards and treasury growth across the MegaETH ecosystem.",
-      "og:image": "https://docs.blackhaven.xyz/images/banner.webp",
-      "twitter:site": "@blackhaven"
+    "footerSocials": {
+          "x": "https://x.com/blackhaven",
+          "discord": "https://discord.gg/GfTkD6xaGC"
+    },
+    "modeToggle": {
+          "default": "dark",
+          "isHidden": true
+    },
+    "feedback": {
+          "thumbsRating": true,
+          "suggestEdit": true
+    },
+    "seo": {
+          "indexHiddenPages": false,
+          "metatags": {
+                  "og:site_name": "Blackhaven Documentation",
+                  "og:description": "The reserve-backed liquidity engine powering sustainable rewards and treasury growth across the MegaETH ecosystem.",
+                  "og:image": "https://docs.blackhaven.xyz/images/banner.webp",
+                  "twitter:site": "@blackhaven"
+          }
     }
-  }
 }
