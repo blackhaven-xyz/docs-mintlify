@@ -1,6 +1,6 @@
 # Blackhaven Documentation
 
-Official documentation for Blackhaven—the reserve-backed liquidity engine powering sustainable rewards and treasury growth across the MegaETH ecosystem.
+Official documentation for Blackhaven—the reserve-backed liquidity engine powering sustainable rewards and reserve growth across the MegaETH ecosystem.
 
 ![Blackhaven](https://img.shields.io/badge/Blackhaven-MegaETH-D4FFAF?style=for-the-badge)
 
@@ -24,14 +24,7 @@ Official documentation for Blackhaven—the reserve-backed liquidity engine powe
 │   ├── haven-protected-notes.mdx
 │   ├── fixed-term-bonds.mdx
 │   └── blackhaven-dex.mdx
-├── hvn/                      # HVN Token documentation
-│   ├── governance.mdx
-│   ├── staking.mdx
-│   ├── proximity.mdx
-│   ├── bribe-market.mdx
-│   ├── baseline.mdx
-│   └── fees.mdx
-├── treasury/                 # Treasury documentation
+├── reserves/                 # Reserve documentation
 │   ├── overview.mdx
 │   └── bam.mdx
 └── resources/                # Additional resources
@@ -117,17 +110,15 @@ Edit `bunny-config.json` to customize the bunny's dialog:
 ```json
 {
   "phrases": [
-    "RBT backing grows as treasury grows",
+    "RBT backing grows as reserves grow",
     "HPNs are principal-protected",
-    "sHVN = staked HVN for rewards",
     "52-week Note = 52% yield",
     "Built for MegaETH 🚀",
     "Bonds give you discounted RBT",
-    "Treasury = protocol-owned liquidity",
+    "Reserves = protocol-owned liquidity",
     "BAM captures value from price swings",
-    "Early exit = forfeited yield",
-    "HVN governs the protocol"
-  ]
+    "Early exit = forfeited yield"
+  ]    
 }
 ```
 
